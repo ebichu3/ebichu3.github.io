@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-12-17T15:04:06.716Z</updated>
+  <updated>2018-12-25T09:54:25.626Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,11 +17,36 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>ETL工具kettle使用记录——安装和基本输入输出</title>
+    <link href="http://yoursite.com/2018/12/25/ETL%E5%B7%A5%E5%85%B7kettle%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95%E2%80%94%E2%80%94%E5%AE%89%E8%A3%85%E5%92%8C%E5%9F%BA%E6%9C%AC%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/"/>
+    <id>http://yoursite.com/2018/12/25/ETL工具kettle使用记录——安装和基本输入输出/</id>
+    <published>2018-12-25T09:11:00.000Z</published>
+    <updated>2018-12-25T09:54:25.626Z</updated>
+    
+    <content type="html"><![CDATA[<p>下载连接</p><blockquote><p><a href="https://sourceforge.net/projects/pentaho/" target="_blank" rel="noopener">https://sourceforge.net/projects/pentaho/</a><br><a href="https://sourceforge.net/projects/pentaho/" target="_blank" rel="noopener"></a><br>我下载的是pdi-ce-7.0.0.0-25，所以示例都是根据此版本。</p></blockquote><p>Kettle是由Java编写的免安装软件，运行该软件前需安装jdk，请注意版本适应和设置环境变量。<br>把下载的压缩包解压后，进入文件夹，双击运行下图中的文件即可使用kettle。<br><img src="/2018/12/25/ETL工具kettle使用记录——安装和基本输入输出/1.png" alt=""><br>接下来就是kettle的使用了。Kettle可以生成两种文件：作业和转换。</p><ul><li>1转换完成数据ETL工作</li><li>2作业控制完成整个工作流。</li></ul><p>今天我们来做一个简单的输入输出转换。<br><img src="/2018/12/25/ETL工具kettle使用记录——安装和基本输入输出/2.png" alt=""><br>单击按钮，新建一个转换。<br><img src="/2018/12/25/ETL工具kettle使用记录——安装和基本输入输出/3.png" alt=""><br>从左侧核心对象中的“输入”“输出”中分别找出“表输入”“表输出”组件，鼠标单击拖到右边工作面板。按住shift点击“表输入”，再点击“表输出”就可以把两个组件连起来了。箭头代表数据流向。<br>双击“表输入”，进入组件编辑。<br><img src="/2018/12/25/ETL工具kettle使用记录——安装和基本输入输出/4.png" alt=""><br>第一次建立数据库连接需点击新建。SQL就按你的需求写就行，全部写完点击确定即可。<br><img src="/2018/12/25/ETL工具kettle使用记录——安装和基本输入输出/5.png" alt=""><br>按实际情况填入，数据表空间和索引表空间不用填，建议点击测试测一下是否连接成功。<br>注意: 数据库名称需填写SID。<br>同样双击“表输出”。<br><img src="/2018/12/25/ETL工具kettle使用记录——安装和基本输入输出/6.png" alt=""><br>选择数据库连接，你也可以新建一个。<br>介绍一下各项的含义:<br>目标模式：数据库连接下的其他模式或者说用户。<br>目标表: 输出到哪张表。<br>提交记录数：kettle每多少条输出到表一次。<br>裁剪表: 勾选上就每次输出前都truncate该表再输出。<br>指定数据库字段：勾选上就要使用下面的数据库字段页签，制定kettle数据流字段和输出表字段的映射关系。<br>全部写完点击确定即可。<br><img src="/2018/12/25/ETL工具kettle使用记录——安装和基本输入输出/7.png" alt=""><br>点击图中三角号就可以运行了。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;下载连接&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&quot;https://sourceforge.net/projects/pentaho/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://sourceforge.net/proje
+      
+    
+    </summary>
+    
+    
+      <category term="ETL kettle" scheme="http://yoursite.com/tags/ETL-kettle/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Hello World</title>
     <link href="http://yoursite.com/2018/12/17/hello-world/"/>
     <id>http://yoursite.com/2018/12/17/hello-world/</id>
     <published>2018-12-17T15:04:06.704Z</published>
-    <updated>2018-12-17T15:04:06.716Z</updated>
+    <updated>2018-12-25T09:25:47.703Z</updated>
     
     <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
     

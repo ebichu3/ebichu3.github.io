@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>ETL工具kettle使用记录——安装和基本输入输出 | ebichu&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="下载连接  https://sourceforge.net/projects/pentaho/我下载的是pdi-ce-7.0.0.0-25，所以示例都是根据此版本。  Kettle是由Java编写的免安装软件，运行该软件前需安装jdk，请注意版本适应和设置环境变量。把下载的压缩包解压后，进入文件夹，双击运行下图中的文件即可使用kettle。接下来就是kettle的使用了。Kettle可以生成两种文">
+<meta name="keywords" content="ETL kettle">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ETL工具kettle使用记录——安装和基本输入输出">
+<meta property="og:url" content="http://yoursite.com/2018/12/25/ETL工具kettle使用记录——安装和基本输入输出/index.html">
+<meta property="og:site_name" content="ebichu&#39;s Blog">
+<meta property="og:description" content="下载连接  https://sourceforge.net/projects/pentaho/我下载的是pdi-ce-7.0.0.0-25，所以示例都是根据此版本。  Kettle是由Java编写的免安装软件，运行该软件前需安装jdk，请注意版本适应和设置环境变量。把下载的压缩包解压后，进入文件夹，双击运行下图中的文件即可使用kettle。接下来就是kettle的使用了。Kettle可以生成两种文">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://yoursite.com/2018/12/25/ETL工具kettle使用记录——安装和基本输入输出/1.png">
+<meta property="og:image" content="http://yoursite.com/2018/12/25/ETL工具kettle使用记录——安装和基本输入输出/2.png">
+<meta property="og:image" content="http://yoursite.com/2018/12/25/ETL工具kettle使用记录——安装和基本输入输出/3.png">
+<meta property="og:image" content="http://yoursite.com/2018/12/25/ETL工具kettle使用记录——安装和基本输入输出/4.png">
+<meta property="og:image" content="http://yoursite.com/2018/12/25/ETL工具kettle使用记录——安装和基本输入输出/5.png">
+<meta property="og:image" content="http://yoursite.com/2018/12/25/ETL工具kettle使用记录——安装和基本输入输出/6.png">
+<meta property="og:image" content="http://yoursite.com/2018/12/25/ETL工具kettle使用记录——安装和基本输入输出/7.png">
+<meta property="og:updated_time" content="2018-12-25T09:54:25.626Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ETL工具kettle使用记录——安装和基本输入输出">
+<meta name="twitter:description" content="下载连接  https://sourceforge.net/projects/pentaho/我下载的是pdi-ce-7.0.0.0-25，所以示例都是根据此版本。  Kettle是由Java编写的免安装软件，运行该软件前需安装jdk，请注意版本适应和设置环境变量。把下载的压缩包解压后，进入文件夹，双击运行下图中的文件即可使用kettle。接下来就是kettle的使用了。Kettle可以生成两种文">
+<meta name="twitter:image" content="http://yoursite.com/2018/12/25/ETL工具kettle使用记录——安装和基本输入输出/1.png">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/typing.css">
+  <link rel="stylesheet" href="/css/donate.css">
+  
+</head>
+</html>
+  
+    
+      <body>
+    
+  
+      <div id="container" class="container">
+        <article id="post-ETL工具kettle使用记录——安装和基本输入输出" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <header id="header" class="header">
+    <div class="mobile-nav">
+      <h1 class="nickname">ebichu</h1>
+      <a id="menu">
+        &#9776; Menu
+      </a>
+    </div>
+    
+        <nav id="main-nav" class="main-nav nav-left">
+    
+    
+      <a class="main-nav-link" href="/">Home</a>
+    
+      <a class="main-nav-link" href="/archives">Archives</a>
+    
+      <a class="main-nav-link" href="/about">About</a>
+    
+  </nav>
+</header>
+
+  <hr>
+  <div class="article-inner">
+    
+
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      ETL工具kettle使用记录——安装和基本输入输出
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry typo" itemprop="articleBody">
+      
+        <p>下载连接</p>
+<blockquote>
+<p><a href="https://sourceforge.net/projects/pentaho/" target="_blank" rel="noopener">https://sourceforge.net/projects/pentaho/</a><br><a href="https://sourceforge.net/projects/pentaho/" target="_blank" rel="noopener"></a><br>我下载的是pdi-ce-7.0.0.0-25，所以示例都是根据此版本。</p>
+</blockquote>
+<p>Kettle是由Java编写的免安装软件，运行该软件前需安装jdk，请注意版本适应和设置环境变量。<br>把下载的压缩包解压后，进入文件夹，双击运行下图中的文件即可使用kettle。<br><img src="/2018/12/25/ETL工具kettle使用记录——安装和基本输入输出/1.png" alt=""><br>接下来就是kettle的使用了。Kettle可以生成两种文件：作业和转换。</p>
+<ul>
+<li>1转换完成数据ETL工作</li>
+<li>2作业控制完成整个工作流。</li>
+</ul>
+<p>今天我们来做一个简单的输入输出转换。<br><img src="/2018/12/25/ETL工具kettle使用记录——安装和基本输入输出/2.png" alt=""><br>单击按钮，新建一个转换。<br><img src="/2018/12/25/ETL工具kettle使用记录——安装和基本输入输出/3.png" alt=""><br>从左侧核心对象中的“输入”“输出”中分别找出“表输入”“表输出”组件，鼠标单击拖到右边工作面板。按住shift点击“表输入”，再点击“表输出”就可以把两个组件连起来了。箭头代表数据流向。<br>双击“表输入”，进入组件编辑。<br><img src="/2018/12/25/ETL工具kettle使用记录——安装和基本输入输出/4.png" alt=""><br>第一次建立数据库连接需点击新建。SQL就按你的需求写就行，全部写完点击确定即可。<br><img src="/2018/12/25/ETL工具kettle使用记录——安装和基本输入输出/5.png" alt=""><br>按实际情况填入，数据表空间和索引表空间不用填，建议点击测试测一下是否连接成功。<br>注意: 数据库名称需填写SID。<br>同样双击“表输出”。<br><img src="/2018/12/25/ETL工具kettle使用记录——安装和基本输入输出/6.png" alt=""><br>选择数据库连接，你也可以新建一个。<br>介绍一下各项的含义:<br>目标模式：数据库连接下的其他模式或者说用户。<br>目标表: 输出到哪张表。<br>提交记录数：kettle每多少条输出到表一次。<br>裁剪表: 勾选上就每次输出前都truncate该表再输出。<br>指定数据库字段：勾选上就要使用下面的数据库字段页签，制定kettle数据流字段和输出表字段的映射关系。<br>全部写完点击确定即可。<br><img src="/2018/12/25/ETL工具kettle使用记录——安装和基本输入输出/7.png" alt=""><br>点击图中三角号就可以运行了。</p>
+
+      
+      
+    </div>
+    <footer class="article-footer">
+      <ul class="article-meta">
+        <li>
+          <span class="label">Published Date:</span>
+          <a href="/2018/12/25/ETL工具kettle使用记录——安装和基本输入输出/" class="article-date">
+  <time datetime="2018-12-25T09:11:00.000Z" itemprop="datePublished">2018-12-25</time>
+</a>
+
+        </li>
+        
+        
+          <li>
+            <span class="label">Tag:</span>
+            
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ETL-kettle/">ETL kettle</a></li></ul>
+
+
+          </li>
+        
+        <hr>
+      </ul>
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav" class="article-nav">
+  
+    <span id="article-nav-newer" class="article-nav-link-wrap newer"></span>
+  
+  
+    <a href="/2018/12/17/hello-world/" id="article-nav-older" class="article-nav-link-wrap older">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Hello World</div>
+    </a>
+  
+</nav>
+
+
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+      </div>
+      
+    <footer id="footer" class="post-footer footer">
+      
+      <hr>
+      <div id="footerContent" class="footer-content">
+        <p>ipsum dolor sit amet, <strong>consectetur adipiscing elit.</strong> Fusce eget urna vitae velit <em>eleifend interdum at ac nisi. In nec ligula lacus. Cum sociis natoque</em> penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed eu cursus erat, ut dapibus quam. Post</p>
+
+
+      </div>
+    </footer>
+
+      
+
+
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+
+
+<script src="/js/typing.js"></script>
+<!--[if lt IE 9]><script src="https://cdn.jsdelivr.net/npm/html5shiv@3/dist/html5shiv.min.js"></script><![endif]-->
+
+
+
+
+
+
+
+    </div>
+  </body>
+</html>
