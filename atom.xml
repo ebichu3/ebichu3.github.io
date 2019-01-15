@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-01-15T02:59:33.953Z</updated>
+  <updated>2019-01-15T07:01:47.105Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -18,12 +18,12 @@
   
   <entry>
     <title>ETL工具kettle使用记录——rest client组件调用服务</title>
-    <link href="http://yoursite.com/2019/01/01/ETL%E5%B7%A5%E5%85%B7kettle%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95%E2%80%94%E2%80%94rest-client%E7%BB%84%E4%BB%B6%E8%B0%83%E7%94%A8%E6%9C%8D%E5%8A%A1/"/>
-    <id>http://yoursite.com/2019/01/01/ETL工具kettle使用记录——rest-client组件调用服务/</id>
-    <published>2019-01-01T09:07:51.000Z</published>
-    <updated>2019-01-15T02:59:33.953Z</updated>
+    <link href="http://yoursite.com/2018/12/27/ETL%E5%B7%A5%E5%85%B7kettle%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95%E2%80%94%E2%80%94rest-client%E7%BB%84%E4%BB%B6%E8%B0%83%E7%94%A8%E6%9C%8D%E5%8A%A1/"/>
+    <id>http://yoursite.com/2018/12/27/ETL工具kettle使用记录——rest-client组件调用服务/</id>
+    <published>2018-12-27T09:07:51.000Z</published>
+    <updated>2019-01-15T07:01:47.105Z</updated>
     
-    <content type="html"><![CDATA[<p>今天我们用一个小例子实现kettle通过rest client组件调用web服务并输出到文本文件中。</p><ul><li>首先明确目标。我们有一个加密后的字符串，需要调用服务对其进行解密，然后将返回的数据存入文本文件。</li><li>然后大致设计一下。需要生成字符串/调用服务/接收数据并处理/输出到文件这些组件。</li><li>最后打开kettle，开始吧。</li></ul><p><img src="/2019/01/01/ETL工具kettle使用记录——rest-client组件调用服务/1.png" alt=""><br>拖入生成记录组件，生成一条记录，所以</p><ul><li>限制处填1。<br>在字段处新增一条记录，名称命名为URL，可以设置数据类型/格式/长度等等属性。建议自己都点点，尝试一下。<br>属性为值的地方填入服务地址拼上参数。<br>PS：也可以通过其他组件获取记录，比如表输入/CSV文件输入等等<br><img src="/2019/01/01/ETL工具kettle使用记录——rest-client组件调用服务/2.png" alt=""><br>数据有了，接下来看怎么调用服务。</li><li>Accept URL from field？处打勾，下面的</li><li>URL field name下拉框选择刚刚生成的记录名称URL。<br>我们是GET请求，所以</li><li>HTTP method下拉框选择GET。</li><li>Result field name处填写接收返回数据存入的字段名称，默认result。<br><img src="/2019/01/01/ETL工具kettle使用记录——rest-client组件调用服务/3.png" alt=""><br>这样请求服务后会接收到一个JSON字符串。</li><li>从字段获取源下拉框选择result。<br><img src="/2019/01/01/ETL工具kettle使用记录——rest-client组件调用服务/4.png" alt=""><br><img src="/2019/01/01/ETL工具kettle使用记录——rest-client组件调用服务/5.png" alt=""><br>点击页签为字段，根据返回JSON串的格式获取字段。<br><img src="/2019/01/01/ETL工具kettle使用记录——rest-client组件调用服务/6.png" alt=""><br>返回数据有三个字段，我们只需要其中的data字段。通过字段选择组件进行处理。<br>点击获取选择的字段，kettle自动将流中的字段全部给出，不需要的右键删除即可。</li><li>字段选择组件可以将字段重命名，修改长度和精度。<br><img src="/2019/01/01/ETL工具kettle使用记录——rest-client组件调用服务/7.png" alt=""><br>最后就是文本文件输出了。将组件拖过来，修改一下路径就可以。<br><img src="/2019/01/01/ETL工具kettle使用记录——rest-client组件调用服务/8.png" alt=""><br>在你设置的路径下面找到文件，打开如上图所示，说明调用解密服务成功啦！<br><img src="/2019/01/01/ETL工具kettle使用记录——rest-client组件调用服务/9.png" alt=""><br>整体流程如上图所示，以上。</li></ul>]]></content>
+    <content type="html"><![CDATA[<p>今天我们用一个小例子实现kettle通过rest client组件调用web服务并输出到文本文件中。</p><ul><li>首先明确目标。我们有一个加密后的字符串，需要调用服务对其进行解密，然后将返回的数据存入文本文件。</li><li>然后大致设计一下。需要生成字符串/调用服务/接收数据并处理/输出到文件这些组件。</li><li>最后打开kettle，开始吧。</li></ul><p><img src="/2018/12/27/ETL工具kettle使用记录——rest-client组件调用服务/1.png" alt=""><br>拖入生成记录组件，生成一条记录，所以</p><ul><li>限制处填1。</li></ul><p>在字段处新增一条记录，名称命名为URL，可以设置数据类型/格式/长度等等属性。建议自己都点点，尝试一下。<br>属性为值的地方填入服务地址拼上参数。<br>PS：也可以通过其他组件获取记录，比如表输入/CSV文件输入等等<br><img src="/2018/12/27/ETL工具kettle使用记录——rest-client组件调用服务/2.png" alt=""><br>数据有了，接下来看怎么调用服务。</p><ul><li>Accept URL from field？处打勾，下面的</li><li>URL field name下拉框选择刚刚生成的记录名称URL。</li></ul><p>我们是GET请求，所以</p><ul><li>HTTP method下拉框选择GET。</li><li>Result field name处填写接收返回数据存入的字段名称，默认result。</li></ul><p><img src="/2018/12/27/ETL工具kettle使用记录——rest-client组件调用服务/3.png" alt=""><br>这样请求服务后会接收到一个JSON字符串。</p><ul><li>从字段获取源下拉框选择result。</li></ul><p><img src="/2018/12/27/ETL工具kettle使用记录——rest-client组件调用服务/4.png" alt=""><br><img src="/2018/12/27/ETL工具kettle使用记录——rest-client组件调用服务/5.png" alt=""><br>点击页签为字段，根据返回JSON串的格式获取字段。<br><img src="/2018/12/27/ETL工具kettle使用记录——rest-client组件调用服务/6.png" alt=""><br>返回数据有三个字段，我们只需要其中的data字段。通过字段选择组件进行处理。<br>点击获取选择的字段，kettle自动将流中的字段全部给出，不需要的右键删除即可。</p><ul><li>字段选择组件可以将字段重命名，修改长度和精度。</li></ul><p><img src="/2018/12/27/ETL工具kettle使用记录——rest-client组件调用服务/7.png" alt=""><br>最后就是文本文件输出了。将组件拖过来，修改一下路径就可以。<br><img src="/2018/12/27/ETL工具kettle使用记录——rest-client组件调用服务/8.png" alt=""><br>在你设置的路径下面找到文件，打开如上图所示，说明调用解密服务成功啦！<br><img src="/2018/12/27/ETL工具kettle使用记录——rest-client组件调用服务/9.png" alt=""><br>整体流程如上图所示，以上。</p>]]></content>
     
     <summary type="html">
     
