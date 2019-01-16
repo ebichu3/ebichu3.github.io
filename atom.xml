@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-01-15T07:01:47.105Z</updated>
+  <updated>2019-01-16T07:09:19.375Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ETL工具kettle使用记录——数据库连接如何重复使用</title>
+    <link href="http://yoursite.com/2018/12/29/ETL%E5%B7%A5%E5%85%B7kettle%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95%E2%80%94%E2%80%94%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9E%E6%8E%A5%E5%A6%82%E4%BD%95%E9%87%8D%E5%A4%8D%E4%BD%BF%E7%94%A8/"/>
+    <id>http://yoursite.com/2018/12/29/ETL工具kettle使用记录——数据库连接如何重复使用/</id>
+    <published>2018-12-29T09:15:16.000Z</published>
+    <updated>2019-01-16T07:09:19.375Z</updated>
+    
+    <content type="html"><![CDATA[<p>每次开发mapping都要填写数据库信息，用户名和密码简单还好，一旦设计的复杂就很头疼。<br>今天分享一个kettle中数据库连接复用的小窍门。<br><img src="/2018/12/29/ETL工具kettle使用记录——数据库连接如何重复使用/1.png" alt=""><br>左侧主对象树页签下打开DB连接，该mapping建立的所有数据库连接都在列表里。<br>找到你想复用的那个，右键点击“共享”即可。<br><img src="/2018/12/29/ETL工具kettle使用记录——数据库连接如何重复使用/2.png" alt=""><br>共享的数据库连接字体加粗显示。<br><img src="/2018/12/29/ETL工具kettle使用记录——数据库连接如何重复使用/3.png" alt=""><br>如果不想复用了，右键点击停止共享即可。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;每次开发mapping都要填写数据库信息，用户名和密码简单还好，一旦设计的复杂就很头疼。&lt;br&gt;今天分享一个kettle中数据库连接复用的小窍门。&lt;br&gt;&lt;img src=&quot;/2018/12/29/ETL工具kettle使用记录——数据库连接如何重复使用/1.png&quot; al
+      
+    
+    </summary>
+    
+    
+      <category term="ETL kettle" scheme="http://yoursite.com/tags/ETL-kettle/"/>
+    
+  </entry>
   
   <entry>
     <title>ETL工具kettle使用记录——rest client组件调用服务</title>
