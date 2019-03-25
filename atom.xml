@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-01-16T07:09:19.375Z</updated>
+  <updated>2019-03-23T05:55:05.476Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,76 +17,27 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>ETL工具kettle使用记录——数据库连接如何重复使用</title>
-    <link href="http://yoursite.com/2018/12/29/ETL%E5%B7%A5%E5%85%B7kettle%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95%E2%80%94%E2%80%94%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9E%E6%8E%A5%E5%A6%82%E4%BD%95%E9%87%8D%E5%A4%8D%E4%BD%BF%E7%94%A8/"/>
-    <id>http://yoursite.com/2018/12/29/ETL工具kettle使用记录——数据库连接如何重复使用/</id>
-    <published>2018-12-29T09:15:16.000Z</published>
-    <updated>2019-01-16T07:09:19.375Z</updated>
-    
-    <content type="html"><![CDATA[<p>每次开发mapping都要填写数据库信息，用户名和密码简单还好，一旦设计的复杂就很头疼。<br>今天分享一个kettle中数据库连接复用的小窍门。<br><img src="/2018/12/29/ETL工具kettle使用记录——数据库连接如何重复使用/1.png" alt=""><br>左侧主对象树页签下打开DB连接，该mapping建立的所有数据库连接都在列表里。<br>找到你想复用的那个，右键点击“共享”即可。<br><img src="/2018/12/29/ETL工具kettle使用记录——数据库连接如何重复使用/2.png" alt=""><br>共享的数据库连接字体加粗显示。<br><img src="/2018/12/29/ETL工具kettle使用记录——数据库连接如何重复使用/3.png" alt=""><br>如果不想复用了，右键点击停止共享即可。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;每次开发mapping都要填写数据库信息，用户名和密码简单还好，一旦设计的复杂就很头疼。&lt;br&gt;今天分享一个kettle中数据库连接复用的小窍门。&lt;br&gt;&lt;img src=&quot;/2018/12/29/ETL工具kettle使用记录——数据库连接如何重复使用/1.png&quot; al
-      
-    
-    </summary>
-    
-    
-      <category term="ETL kettle" scheme="http://yoursite.com/tags/ETL-kettle/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ETL工具kettle使用记录——rest client组件调用服务</title>
-    <link href="http://yoursite.com/2018/12/27/ETL%E5%B7%A5%E5%85%B7kettle%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95%E2%80%94%E2%80%94rest-client%E7%BB%84%E4%BB%B6%E8%B0%83%E7%94%A8%E6%9C%8D%E5%8A%A1/"/>
-    <id>http://yoursite.com/2018/12/27/ETL工具kettle使用记录——rest-client组件调用服务/</id>
-    <published>2018-12-27T09:07:51.000Z</published>
-    <updated>2019-01-15T07:01:47.105Z</updated>
-    
-    <content type="html"><![CDATA[<p>今天我们用一个小例子实现kettle通过rest client组件调用web服务并输出到文本文件中。</p><ul><li>首先明确目标。我们有一个加密后的字符串，需要调用服务对其进行解密，然后将返回的数据存入文本文件。</li><li>然后大致设计一下。需要生成字符串/调用服务/接收数据并处理/输出到文件这些组件。</li><li>最后打开kettle，开始吧。</li></ul><p><img src="/2018/12/27/ETL工具kettle使用记录——rest-client组件调用服务/1.png" alt=""><br>拖入生成记录组件，生成一条记录，所以</p><ul><li>限制处填1。</li></ul><p>在字段处新增一条记录，名称命名为URL，可以设置数据类型/格式/长度等等属性。建议自己都点点，尝试一下。<br>属性为值的地方填入服务地址拼上参数。<br>PS：也可以通过其他组件获取记录，比如表输入/CSV文件输入等等<br><img src="/2018/12/27/ETL工具kettle使用记录——rest-client组件调用服务/2.png" alt=""><br>数据有了，接下来看怎么调用服务。</p><ul><li>Accept URL from field？处打勾，下面的</li><li>URL field name下拉框选择刚刚生成的记录名称URL。</li></ul><p>我们是GET请求，所以</p><ul><li>HTTP method下拉框选择GET。</li><li>Result field name处填写接收返回数据存入的字段名称，默认result。</li></ul><p><img src="/2018/12/27/ETL工具kettle使用记录——rest-client组件调用服务/3.png" alt=""><br>这样请求服务后会接收到一个JSON字符串。</p><ul><li>从字段获取源下拉框选择result。</li></ul><p><img src="/2018/12/27/ETL工具kettle使用记录——rest-client组件调用服务/4.png" alt=""><br><img src="/2018/12/27/ETL工具kettle使用记录——rest-client组件调用服务/5.png" alt=""><br>点击页签为字段，根据返回JSON串的格式获取字段。<br><img src="/2018/12/27/ETL工具kettle使用记录——rest-client组件调用服务/6.png" alt=""><br>返回数据有三个字段，我们只需要其中的data字段。通过字段选择组件进行处理。<br>点击获取选择的字段，kettle自动将流中的字段全部给出，不需要的右键删除即可。</p><ul><li>字段选择组件可以将字段重命名，修改长度和精度。</li></ul><p><img src="/2018/12/27/ETL工具kettle使用记录——rest-client组件调用服务/7.png" alt=""><br>最后就是文本文件输出了。将组件拖过来，修改一下路径就可以。<br><img src="/2018/12/27/ETL工具kettle使用记录——rest-client组件调用服务/8.png" alt=""><br>在你设置的路径下面找到文件，打开如上图所示，说明调用解密服务成功啦！<br><img src="/2018/12/27/ETL工具kettle使用记录——rest-client组件调用服务/9.png" alt=""><br>整体流程如上图所示，以上。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;今天我们用一个小例子实现kettle通过rest client组件调用web服务并输出到文本文件中。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;首先明确目标。我们有一个加密后的字符串，需要调用服务对其进行解密，然后将返回的数据存入文本文件。&lt;/li&gt;
-&lt;li&gt;然后大致设计一下。需要生成字符
-      
-    
-    </summary>
-    
-    
-      <category term="ETL kettle" scheme="http://yoursite.com/tags/ETL-kettle/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ETL工具kettle使用记录——安装和基本输入输出</title>
-    <link href="http://yoursite.com/2018/12/25/ETL%E5%B7%A5%E5%85%B7kettle%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95%E2%80%94%E2%80%94%E5%AE%89%E8%A3%85%E5%92%8C%E5%9F%BA%E6%9C%AC%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/"/>
-    <id>http://yoursite.com/2018/12/25/ETL工具kettle使用记录——安装和基本输入输出/</id>
+    <title>一步到位安装KETTLE</title>
+    <link href="http://yoursite.com/2018/12/25/%E4%B8%80%E6%AD%A5%E5%88%B0%E4%BD%8D%E5%AE%89%E8%A3%85KETTLE/"/>
+    <id>http://yoursite.com/2018/12/25/一步到位安装KETTLE/</id>
     <published>2018-12-25T09:11:00.000Z</published>
-    <updated>2018-12-25T09:54:25.626Z</updated>
+    <updated>2019-03-23T05:55:05.476Z</updated>
     
-    <content type="html"><![CDATA[<p>下载连接</p><blockquote><p><a href="https://sourceforge.net/projects/pentaho/" target="_blank" rel="noopener">https://sourceforge.net/projects/pentaho/</a><br><a href="https://sourceforge.net/projects/pentaho/" target="_blank" rel="noopener"></a><br>我下载的是pdi-ce-7.0.0.0-25，所以示例都是根据此版本。</p></blockquote><p>Kettle是由Java编写的免安装软件，运行该软件前需安装jdk，请注意版本适应和设置环境变量。<br>把下载的压缩包解压后，进入文件夹，双击运行下图中的文件即可使用kettle。<br><img src="/2018/12/25/ETL工具kettle使用记录——安装和基本输入输出/1.png" alt=""><br>接下来就是kettle的使用了。Kettle可以生成两种文件：作业和转换。</p><ul><li>1转换完成数据ETL工作</li><li>2作业控制完成整个工作流。</li></ul><p>今天我们来做一个简单的输入输出转换。<br><img src="/2018/12/25/ETL工具kettle使用记录——安装和基本输入输出/2.png" alt=""><br>单击按钮，新建一个转换。<br><img src="/2018/12/25/ETL工具kettle使用记录——安装和基本输入输出/3.png" alt=""><br>从左侧核心对象中的“输入”“输出”中分别找出“表输入”“表输出”组件，鼠标单击拖到右边工作面板。按住shift点击“表输入”，再点击“表输出”就可以把两个组件连起来了。箭头代表数据流向。<br>双击“表输入”，进入组件编辑。<br><img src="/2018/12/25/ETL工具kettle使用记录——安装和基本输入输出/4.png" alt=""><br>第一次建立数据库连接需点击新建。SQL就按你的需求写就行，全部写完点击确定即可。<br><img src="/2018/12/25/ETL工具kettle使用记录——安装和基本输入输出/5.png" alt=""><br>按实际情况填入，数据表空间和索引表空间不用填，建议点击测试测一下是否连接成功。<br>注意: 数据库名称需填写SID。<br>同样双击“表输出”。<br><img src="/2018/12/25/ETL工具kettle使用记录——安装和基本输入输出/6.png" alt=""><br>选择数据库连接，你也可以新建一个。<br>介绍一下各项的含义:<br>目标模式：数据库连接下的其他模式或者说用户。<br>目标表: 输出到哪张表。<br>提交记录数：kettle每多少条输出到表一次。<br>裁剪表: 勾选上就每次输出前都truncate该表再输出。<br>指定数据库字段：勾选上就要使用下面的数据库字段页签，制定kettle数据流字段和输出表字段的映射关系。<br>全部写完点击确定即可。<br><img src="/2018/12/25/ETL工具kettle使用记录——安装和基本输入输出/7.png" alt=""><br>点击图中三角号就可以运行了。</p>]]></content>
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>下载连接</p><blockquote><p><a href="https://sourceforge.net/projects/pentaho/" target="_blank" rel="noopener">https://sourceforge.net/projects/pentaho/</a><br>我下载的是pdi-ce-7.0.0.0-25，所以示例都是根据此版本。</p><p><a href="https://www.oracle.com/technetwork/java/javase/downloads/index.html" target="_blank" rel="noopener">https://www.oracle.com/technetwork/java/javase/downloads/index.html</a>  </p><p>JDK下载地址</p></blockquote><table><thead><tr><th>PDI Versions</th><th>5.1</th><th>5.2/5.3/5.4</th><th>6.0/6.1</th><th>7.0/7.1/8.0/8.1</th></tr></thead><tbody><tr><td>Java Versions</td><td>7</td><td>6（build targets）/7</td><td>7/8</td><td>8</td></tr></tbody></table><p>Kettle是由Java编写的免安装软件，运行该软件前需安装jdk，请注意版本适应和设置环境变量。<br>把下载的压缩包解压后，进入文件夹，双击运行下图中的文件即可使用kettle。<br><img src="/2018/12/25/一步到位安装KETTLE/1.png" alt=""><br>接下来就是kettle的使用了。Kettle可以生成两种文件：作业和转换。</p><ul><li>1转换完成数据ETL工作</li><li>2作业控制完成整个工作流。</li></ul><p>今天我们来做一个简单的输入输出转换。<br><img src="/2018/12/25/一步到位安装KETTLE/2.png" alt=""><br>单击按钮，新建一个转换。<br><img src="/2018/12/25/一步到位安装KETTLE/3.png" alt=""><br>从左侧核心对象中的“输入”“输出”中分别找出“表输入”“表输出”组件，鼠标单击拖到右边工作面板。按住shift点击“表输入”，再点击“表输出”就可以把两个组件连起来了。箭头代表数据流向。<br>双击“表输入”，进入组件编辑。<br><img src="/2018/12/25/一步到位安装KETTLE/4.png" alt=""><br>第一次建立数据库连接需点击新建。SQL就按你的需求写就行，全部写完点击确定即可。<br><img src="/2018/12/25/一步到位安装KETTLE/5.png" alt=""><br>按实际情况填入，数据表空间和索引表空间不用填，建议点击测试测一下是否连接成功。<br>注意: 数据库名称需填写SID。<br>同样双击“表输出”。<br><img src="/2018/12/25/一步到位安装KETTLE/6.png" alt=""><br>选择数据库连接，你也可以新建一个。<br>介绍一下各项的含义:<br>目标模式：数据库连接下的其他模式或者说用户。<br>目标表: 输出到哪张表。<br>提交记录数：kettle每多少条输出到表一次。<br>裁剪表: 勾选上就每次输出前都truncate该表再输出。<br>指定数据库字段：勾选上就要使用下面的数据库字段页签，制定kettle数据流字段和输出表字段的映射关系。<br>全部写完点击确定即可。<br><img src="/2018/12/25/一步到位安装KETTLE/7.png" alt=""><br>点击图中三角号就可以运行了。</p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;下载连接&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;a href=&quot;https://sourceforge.net/projects/pentaho/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://sourceforge.net/proje
+        &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot; cla
       
     
     </summary>
     
     
-      <category term="ETL kettle" scheme="http://yoursite.com/tags/ETL-kettle/"/>
+      <category term="ETL" scheme="http://yoursite.com/tags/ETL/"/>
+    
+      <category term="kettle" scheme="http://yoursite.com/tags/kettle/"/>
     
   </entry>
   
