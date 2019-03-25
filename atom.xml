@@ -5,9 +5,9 @@
   <subtitle>to be continued...</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://yoursite.com/"/>
+  <link href="https://ebichu3.github.io/"/>
   <updated>2019-03-23T05:55:05.476Z</updated>
-  <id>http://yoursite.com/</id>
+  <id>https://ebichu3.github.io/</id>
   
   <author>
     <name>ebichu</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>一步到位安装KETTLE</title>
-    <link href="http://yoursite.com/2018/12/25/%E4%B8%80%E6%AD%A5%E5%88%B0%E4%BD%8D%E5%AE%89%E8%A3%85KETTLE/"/>
-    <id>http://yoursite.com/2018/12/25/一步到位安装KETTLE/</id>
+    <link href="https://ebichu3.github.io/2018/12/25/%E4%B8%80%E6%AD%A5%E5%88%B0%E4%BD%8D%E5%AE%89%E8%A3%85KETTLE/"/>
+    <id>https://ebichu3.github.io/2018/12/25/一步到位安装KETTLE/</id>
     <published>2018-12-25T09:11:00.000Z</published>
     <updated>2019-03-23T05:55:05.476Z</updated>
     
@@ -35,9 +35,9 @@
     </summary>
     
     
-      <category term="ETL" scheme="http://yoursite.com/tags/ETL/"/>
+      <category term="ETL" scheme="https://ebichu3.github.io/tags/ETL/"/>
     
-      <category term="kettle" scheme="http://yoursite.com/tags/kettle/"/>
+      <category term="kettle" scheme="https://ebichu3.github.io/tags/kettle/"/>
     
   </entry>
   
