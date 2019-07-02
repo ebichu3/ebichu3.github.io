@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://ebichu3.github.io/"/>
-  <updated>2019-07-02T06:27:53.889Z</updated>
+  <updated>2019-07-02T07:42:28.572Z</updated>
   <id>https://ebichu3.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>kettle基础教程（二）开始你的第一个kettle例子吧</title>
+    <link href="https://ebichu3.github.io/2019/03/10/kettle%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B%EF%BC%88%E4%BA%8C%EF%BC%89%E5%BC%80%E5%A7%8B%E4%BD%A0%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AAkettle%E4%BE%8B%E5%AD%90%E5%90%A7/"/>
+    <id>https://ebichu3.github.io/2019/03/10/kettle基础教程（二）开始你的第一个kettle例子吧/</id>
+    <published>2019-03-10T10:11:00.000Z</published>
+    <updated>2019-07-02T07:42:28.572Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="简要介绍"><a href="#简要介绍" class="headerlink" title="简要介绍"></a>简要介绍</h2><p>通过上篇文章已经安装好kettle了吧（如果有问题和意见欢迎评论提问交流）。我认为学习一个工具，最好的方式就是直接上手去做，遇到问题解决问题，过程中再通过看官方文档等方式进行知识的补充。接下来我们将通过一系列例子来进行kettle的学习，同时本博客也会陆续提供官方文档的中文翻译和个人解读。</p><p>本文将使用kettle实现一个同构数据从MySQL数据迁移到Oracle数据库的例子，通过这个简单的例子你将会学习到以下几点</p><ul><li>kettle的基本操作</li><li>表输入、表输出等转换组件的用法</li></ul><h2 id="示例过程"><a href="#示例过程" class="headerlink" title="示例过程"></a>示例过程</h2><p>双击运行Spoon.bat文件，出现欢迎界面。点击左上角“新建”按钮，图标如下图所示。</p><p><img src="/2019/03/10/kettle基础教程（二）开始你的第一个kettle例子吧/2.png" alt=""></p><p>你会看到有两种文件可供选择，Kettle可以生成两种文件：作业和转换。</p><ul><li>转换完成数据ETL工作</li><li>作业控制完成整个工作流。</li></ul><p>单击按钮，新建一个转换。从左侧核心对象中的“输入”“输出”中分别找出“表输入”“表输出”组件，鼠标单击拖到右边工作面板。按住shift点击“表输入”，再点击“表输出”就可以把两个组件连起来了。箭头代表数据流向。</p><p><img src="/2019/03/10/kettle基础教程（二）开始你的第一个kettle例子吧/3.png" alt=""></p><p>双击“表输入”，进入组件编辑。<br><img src="/2019/03/10/kettle基础教程（二）开始你的第一个kettle例子吧/4.png" alt=""><br>第一次建立数据库连接需点击新建。SQL就按你的需求写就行，全部写完点击确定即可。<br><img src="/2019/03/10/kettle基础教程（二）开始你的第一个kettle例子吧/5.png" alt=""><br>按实际情况填入，数据表空间和索引表空间不用填，建议点击测试测一下是否连接成功。<br>注意: Oracle数据库连接中数据库名称需填写SID。<br>同样双击“表输出”。<br><img src="/2019/03/10/kettle基础教程（二）开始你的第一个kettle例子吧/6.png" alt=""><br>选择数据库连接，你也可以新建一个。<br>介绍一下各项的含义:<br>目标模式：数据库连接下的其他模式或者说用户。<br>目标表: 输出到哪张表。<br>提交记录数：kettle每多少条输出到表一次。<br>裁剪表: 勾选上就每次输出前都会truncate该表再输出。<br>指定数据库字段：勾选上就要使用下面的数据库字段页签，制定kettle数据流字段和输出表字段的映射关系。<br>全部写完点击确定即可。<br><img src="/2019/03/10/kettle基础教程（二）开始你的第一个kettle例子吧/7.png" alt=""><br>点击图中三角号就可以运行了。</p><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul><li>数据库连接中Oracle数据库连接中数据库名称需填写SID，而不是servicename</li><li>建立数据库连接后，会出现在左侧菜单——DB连接中。选中后右键点击“共享”，在之后的使用中就可以不用再填写信息，直接选择该连接即可。</li></ul><p><em>以上。</em></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot; cla
+      
+    
+    </summary>
+    
+    
+      <category term="ETL" scheme="https://ebichu3.github.io/tags/ETL/"/>
+    
+      <category term="kettle" scheme="https://ebichu3.github.io/tags/kettle/"/>
+    
+  </entry>
   
   <entry>
     <title>kettle基础教程（一）简要介绍与安装部署</title>
