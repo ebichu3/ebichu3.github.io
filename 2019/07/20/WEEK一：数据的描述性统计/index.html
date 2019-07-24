@@ -239,7 +239,7 @@
 
     
         <meta property="article:published_time" content="Sat Jul 20 2019 11:11:00 GMT+0800">
-        <meta property="article:modified_time" content="Sat Jul 20 2019 11:40:24 GMT+0800">
+        <meta property="article:modified_time" content="Tue Jul 23 2019 13:54:27 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -262,7 +262,7 @@
     "mainEntityOfPage": "https://ebichu3.github.io/2019/07/20/WEEK一：数据的描述性统计/index.html",
     "headline": "WEEK一：数据的描述性统计",
     "datePublished": "Sat Jul 20 2019 11:11:00 GMT+0800",
-    "dateModified": "Sat Jul 20 2019 11:40:24 GMT+0800",
+    "dateModified": "Tue Jul 23 2019 13:54:27 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "ebichu",
@@ -345,7 +345,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#数据类型"><span class="post-toc-number">1.</span> <span class="post-toc-text">数据类型</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#位置"><span class="post-toc-number">2.</span> <span class="post-toc-text">位置</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#变异性"><span class="post-toc-number">3.</span> <span class="post-toc-text">变异性</span></a></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#数据类型"><span class="post-toc-number">1.</span> <span class="post-toc-text">数据类型</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#位置估计"><span class="post-toc-number">2.</span> <span class="post-toc-text">位置估计</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#变异性"><span class="post-toc-number">3.</span> <span class="post-toc-text">变异性</span></a></li></ol>
     </ul>
     
 
@@ -513,7 +513,7 @@
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
         <p>这周时间比较紧张，加上本身工作不太涉及到数据内容的分析描述，所以文章内容主要是知识点的罗列。基本都是从《面向数据科学家的实用统计学》一书中获得。</p>
-<h5 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h5><p>数据类型包括连续型数据、离散型数据、分类数据（其中包括二进制数据）和有序数据。</p>
+<h5 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h5><p>结构化数据有两种基本类型，即数值型数据和分类数据。包括连续型数据、离散型数据、分类数据（其中包括二进制数据）和有序数据。</p>
 <ul>
 <li><p>连续型数据 数据可在一个区间内取任何值。<br>同义词：区间数据、浮点型数据、数值数据</p>
 </li>
@@ -526,24 +526,16 @@
 <li><p>有序数据 具有明确排序的分类数据。<br>同义词：有序因子数据</p>
 </li>
 </ul>
-<h5 id="位置"><a href="#位置" class="headerlink" title="位置"></a>位置</h5><p>变量表示了测量数据或计数数据，一个变量的取值可能会数以千计。探索数据的一个基本 步骤，就是获得每个特征（变量）的“典型值”。典型值是对数据最常出现位置的估计， 即数据的集中趋势。</p>
+<h5 id="位置估计"><a href="#位置估计" class="headerlink" title="位置估计"></a>位置估计</h5><p>变量表示了测量数据或计数数据，一个变量的取值可能会数以千计。探索数据的一个基本步骤，就是获得每个特征（变量）的“典型值”。典型值是对数据最常出现位置的估计， 即数据的集中趋势。</p>
 <ul>
-<li><p>众数 指数据中出现最频繁的一个或一组数值。</p>
-</li>
-<li><p>均值 所有数据值之和除以数值的个数。<br>同义词：平均值</p>
-</li>
-<li><p>加权均值 各数值乘以相应的权重值，然后加总求和，再除以权重的总和。<br>同义词：加权平均值</p>
-</li>
-<li><p>中位数 使得数据集中分别有一半数据位于该值之上和之下。<br>同义词：第 50 百分位数</p>
-</li>
-<li><p>加权中位数 使得排序数据集中分别有一半的权重之和位于该值之上和之下。</p>
-</li>
-<li><p>切尾均值 在数据集剔除一定数量的极值后，再求均值。<br>同义词：截尾均值</p>
-</li>
-<li><p>稳健 对极值不敏感。<br>同义词：耐抗性</p>
-</li>
-<li><p>离群值 与大部分数据值差异很大的数据值。<br>同义词：极值</p>
-</li>
+<li>众数 指数据中出现最频繁的一个或一组数值。</li>
+<li>均值 所有数据值之和除以数值的个数。<br>同义词：平均值</li>
+<li>切尾均值 在数据集剔除一定数量的极值后，再求均值。<br>同义词：截尾均值</li>
+<li>加权均值 各数值乘以相应的权重值，然后加总求和，再除以权重的总和。<br>同义词：加权平均值</li>
+<li>中位数 使得数据集中分别有一半数据位于该值之上和之下。<br>同义词：第 50 百分位数</li>
+<li>加权中位数 使得排序数据集中分别有一半的权重之和位于该值之上和之下。</li>
+<li>稳健 对极值不敏感。<br>同义词：耐抗性</li>
+<li>离群值 与大部分数据值差异很大的数据值。<br>同义词：极值</li>
 </ul>
 <p>均值是一种基本的位置度量，但是对极值（离群值）敏感。其他一些度量更为稳健，例如中位数和切尾均值。</p>
 <h5 id="变异性"><a href="#变异性" class="headerlink" title="变异性"></a>变异性</h5><p>位置只是总结特性的一个维度，另一个维度是变异性（variability），也称离差（dispersion）， 它测量了数据值是紧密聚集的还是发散的。变异性是统计学的一个核心概念，统计学关注 如何测量变异性，如何降低变异性，如何识别真实变异性中的随机性，如何识别真实变异 性的各种来源，以及如何在存在变异性的情况下做出决策。</p>
@@ -708,6 +700,14 @@
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
+        <a href="/2019/07/23/一个SQL引发的一切/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
+    
 
     <!-- Section Spacer -->
     <div class="section-spacer"></div>
@@ -806,7 +806,7 @@
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2019/07/">七月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/03/">三月 2019<span class="sidebar_archives-count">2</span></a>
+                <a class="sidebar_archives-link" href="/archives/2019/07/">七月 2019<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/03/">三月 2019<span class="sidebar_archives-count">2</span></a>
             </li></ul>
         </li>
         

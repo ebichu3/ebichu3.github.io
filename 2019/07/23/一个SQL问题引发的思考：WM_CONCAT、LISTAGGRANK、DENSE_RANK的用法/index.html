@@ -48,7 +48,7 @@
     
     <title>
         
-            kettle基础教程（一）简要介绍与安装部署 | 
+            由一个SQL问题引发的：WM_CONCAT、LISTAGG的用法 | 
         
         ebichu&#39;s Blog
     </title>
@@ -59,7 +59,7 @@
 
     <meta name="format-detection" content="telephone=no">
     <meta name="description" itemprop="description" content="ebichu&#39;s Blog">
-    <meta name="keywords" content="blog ETL bigdata,ETL,kettle">
+    <meta name="keywords" content="blog ETL bigdata,SQL">
     <meta name="theme-color" content="#0097A7">
 
     <!-- Disable Fucking Bloody Baidu Tranformation -->
@@ -215,7 +215,7 @@
     <!-- WebAPP Icons -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="ebichu&#39;s Blog">
-    <meta name="msapplication-starturl" content="https://ebichu3.github.io/2019/03/08/kettle基础教程（一）简要介绍与安装部署/">
+    <meta name="msapplication-starturl" content="https://ebichu3.github.io/2019/07/23/一个SQL问题引发的思考：WM_CONCAT、LISTAGGRANK、DENSE_RANK的用法/">
     <meta name="msapplication-navbutton-color" content="#0097A7">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="ebichu&#39;s Blog">
@@ -230,16 +230,16 @@
     
 
     <!-- The Open Graph protocol -->
-    <meta property="og:url" content="https://ebichu3.github.io/2019/03/08/kettle基础教程（一）简要介绍与安装部署/">
+    <meta property="og:url" content="https://ebichu3.github.io/2019/07/23/一个SQL问题引发的思考：WM_CONCAT、LISTAGGRANK、DENSE_RANK的用法/">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="kettle基础教程（一）简要介绍与安装部署 | ebichu&#39;s Blog">
+    <meta property="og:title" content="由一个SQL问题引发的：WM_CONCAT、LISTAGG的用法 | ebichu&#39;s Blog">
     <meta property="og:image" content="/img/favicon.png">
     <meta property="og:description" content="ebichu&#39;s Blog">
-    <meta property="og:article:tag" content="ETL"> <meta property="og:article:tag" content="kettle"> 
+    <meta property="og:article:tag" content="SQL"> 
 
     
-        <meta property="article:published_time" content="Fri Mar 08 2019 13:11:00 GMT+0800">
-        <meta property="article:modified_time" content="Tue Jul 02 2019 14:27:53 GMT+0800">
+        <meta property="article:published_time" content="Tue Jul 23 2019 20:11:00 GMT+0800">
+        <meta property="article:modified_time" content="Wed Jul 24 2019 13:52:42 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -247,7 +247,7 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="https://ebichu3.github.io/2019/03/08/kettle基础教程（一）简要介绍与安装部署/index.html">
+        <link rel="canonical" href="https://ebichu3.github.io/2019/07/23/一个SQL问题引发的思考：WM_CONCAT、LISTAGGRANK、DENSE_RANK的用法/index.html">
     
 
     <!-- Structured-data for SEO -->
@@ -259,10 +259,10 @@
 {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "mainEntityOfPage": "https://ebichu3.github.io/2019/03/08/kettle基础教程（一）简要介绍与安装部署/index.html",
-    "headline": "kettle基础教程（一）简要介绍与安装部署",
-    "datePublished": "Fri Mar 08 2019 13:11:00 GMT+0800",
-    "dateModified": "Tue Jul 02 2019 14:27:53 GMT+0800",
+    "mainEntityOfPage": "https://ebichu3.github.io/2019/07/23/一个SQL问题引发的思考：WM_CONCAT、LISTAGGRANK、DENSE_RANK的用法/index.html",
+    "headline": "由一个SQL问题引发的：WM_CONCAT、LISTAGG的用法",
+    "datePublished": "Tue Jul 23 2019 20:11:00 GMT+0800",
+    "dateModified": "Wed Jul 24 2019 13:52:42 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "ebichu",
@@ -280,7 +280,7 @@
             "url": "/img/favicon.png"
         }
     },
-    "keywords": ",ETL,kettleblog ETL bigdata",
+    "keywords": ",SQLblog ETL bigdata",
     "description": "ebichu&#39;s Blog",
 }
 </script>
@@ -345,7 +345,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#简要介绍"><span class="post-toc-number">1.</span> <span class="post-toc-text">简要介绍</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#下载与安装"><span class="post-toc-number">2.</span> <span class="post-toc-text">下载与安装</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#下载"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">下载</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#安装"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">安装</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Windows"><span class="post-toc-number">2.2.1.</span> <span class="post-toc-text">Windows</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#设置Java环境变量"><span class="post-toc-number">2.2.1.1.</span> <span class="post-toc-text">设置Java环境变量</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#安装kettle"><span class="post-toc-number">2.2.1.2.</span> <span class="post-toc-text">安装kettle</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Linux"><span class="post-toc-number">2.2.2.</span> <span class="post-toc-text">Linux</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#安装jdk并设置环境变量"><span class="post-toc-number">2.2.2.1.</span> <span class="post-toc-text">安装jdk并设置环境变量</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#安装kettle-1"><span class="post-toc-number">2.2.2.2.</span> <span class="post-toc-text">安装kettle</span></a></li></ol></li></ol></li></ol></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#总结：WM-CONCAT、LISTAGG的用法"><span class="post-toc-number">1.</span> <span class="post-toc-text">总结：WM_CONCAT、LISTAGG的用法</span></a></li></ol>
     </ul>
     
 
@@ -377,7 +377,7 @@
         
     
             <p class="article-headline-p">
-                kettle基础教程（一）简要介绍与安装部署
+                由一个SQL问题引发的：WM_CONCAT、LISTAGG的用法
             </p>
         </div>
 
@@ -396,7 +396,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>ebichu</strong>
-        <span>3月 08, 2019</span>
+        <span>7月 23, 2019</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -418,7 +418,7 @@
 <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
     <li class="mdl-menu__item">在其它设备中阅读本文章</li>
     
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQ4AAAEOCAAAAABd2qZ5AAADnElEQVR42u3aS47bMBAFQN3/0sk2QCL5vSapMYLiSpixJbK0aPfn+mX9sS4EOHDgwIEDBw4cOHB8MccVr3/c6OYzd9d3f7m75/O37v7SngUHDhw4cJzg+BCKggc/H+buv8/XzwTPdyvOggMHDhw4jnHkgTMnyANqTpDjJmQ4cODAgeN7OJI0aRZWr3LhwIEDB47/iaO9W1LOy9PIlbPgwIEDB47THElB7blQ2JYOE9w8OfyBWikOHDhw4FgeaPj+61fnO3DgwIEDx18c7ZoF0XbALk8C1xcOHDhw4NjLkQeq5Ft5IS9JAluUfP84cODAgeM0R3KkNhjnQXrWRmpf3u2ucODAgQPHVo5ZoEo2uos1eXo+AFEUB3HgwIEDx4gjCYr5oMMs5cvD7Sypw4EDBw4c73Mkj8wPMAucbTLWDu3d4uLAgQMHjgMcK6nRrkZUO9zQpo5FrRQHDhw4cCxz5I2iNm3Lk7e6qDd6kcPfHThw4MCBo2w7zYp37SYS1uQps4JmMdCAAwcOHDiWOdpkbG/DqR2DmPHV8x04cODAgWOBY7bpWbkwD7ft8ZJCIQ4cOHDgeJNjduv8M3kDKQ+3bZuqyGhx4MCBA8cCR/L49jAJ2fqY3WwAAgcOHDhwvMMxa0Qlh0+2vhL4Z0VJHDhw4MBxmiNv9szGHWZYLWK7cxw4cODAsZfjilfboMqZVijzZ92+Zhw4cODAcYCjLcOtB9SV0D4rShaBFgcOHDhwbG07zYp3s63kAxB5MG7DLQ4cOHDg2MuRtHaSVtAMpU3Mkh22zSccOHDgwPEOR77dIqSNWk0ro3jRzwgcOHDgwHGAY3bs9ZQsudtKwrmtC4cDBw4cOJY7+LMkrb1DG1xnoxXD4iAOHDhw4NjEkSRgeaqWl/NmpcbkpQ4zWhw4cODAsak4uLeot86Xj8rl38KBAwcOHO9w5KldO3ZwIhmbJYo4cODAgeN9jiJExUlUHs7bkYg23A5rpThw4MCBI+Zo10rIXIGYpZ1RGREHDhw4cGzlmAWqJBjPinpt+yp5GR8aWjhw4MCB4wDHSmBrB9TyYNxezxJIHDhw4MBxjiMPZnmATJjy+18LCwcOHDhwfD/HLLnKw2HylPynwHByEAcOHDhw/BBHe+xZQJ3d7UOCigMHDhw4jnHkA2qz8bX1UYb1tBAHDhw4cLzDMSuuzT7fhuH2xSQFQRw4cODAcY7DwoEDBw4cOHDgwIEDx5et31So9uAF4dq9AAAAAElFTkSuQmCC">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAT4AAAE+CAAAAAAxUyPsAAAEyUlEQVR42u3aUY6bQBAE0L3/pZMLBKjqHhwnevMVWWsMj0jUVPPzy1qsHwT48OHDZ+HDhw+fhQ/fP8L3E6+rv88//8OpvPy7V784u3Z8+PDhw4fvFN/Dozo43ftvJad79VvtEWa/VVwFPnz48OHDd4gvv6Tk8Z9ztNEnv3nJcdoAhA8fPnz48H2Sr0VMvjsLSXlk2d88fPjw4cOH73uCy+ZiNisp5fNSAx8+fPjw4fs836Z2b8uFTYhp4ZLjf2jWgQ8fPnz48C2Cwv/x7/za8eHDhw8fvj3fbLXBZRNB2jO5L+UPXDs+fPjw4cO34EvqgDeq8zZAzODyG1aM5/Hhw4cPH74FXzLkntXobYDI64nZgHxfi+DDhw8fPnx7vs2YfBYg8kvax5oZ98OR8eHDhw8fvgVfEkTObvuT+DK7ee1QfFj948OHDx8+fGu+fShpi4BZWGkLi3ZIHxHjw4cPHz58C758q9y+XtYW9Ek133Kcqu/x4cOHDx++N/juWc+Ot5PAsQHKY1Y9bseHDx8+fPiO8uWvl83G5+3mvx0h5FcxGy3gw4cPHz58G75ZWZ9ztL+VB5ENbl4cvDLrwIcPHz58+Ebb7HqzXa7NGL4dJODDhw8fPnyf4TtbZ+9f/3qvIGjj0WrWgQ8fPnz48N3yJQ/7fFzdjgFmA/uHi4zL+hwXHz58+PDh2/PlQaQt4nOC+1qh/cXZgLw4Dj58+PDhw7fmK17PiuPFbLVhJY8v7bcuBfDhw4cPH741X3ui7ZZ+Mz7ff7cFfaj78eHDhw8fvjVfcqJ5lGmPtq/vc/TNKAIfPnz48OHb823iSF4xtOHm1KB9E7Mu4x0+fPjw4cO34NuHibZ2n23vT43VN/T48OHDhw/fWb79eLsYNi+OnBw/GRi09Pjw4cOHD98pvnbT3oaetjiYFQpt0XDPuhqT48OHDx8+fEFZ35bjeWiYxaBZ0b+PJg83Ax8+fPjw4VvwJYV7TtaOn9shfftJO1oYlvX48OHDhw/fYs7bBpokQLRj6ffG57PRPj58+PDhw3eWb7PNbl81S8JKC53XHG2EWuU+fPjw4cOH76Ksn1HOsFrK/PW1tuhvXxHAhw8fPnz4TvHNwkc7rs4H0u3xk8/3Nx4fPnz48OHb8+2HzcPHf7yx31cGeZVfBxd8+PDhw4dvwdfW1rOTKwbSowA0Q8+vHR8+fPjw4dvw5ZvzfJjdvl7WcuRl/awUePgVfPjw4cOH7xBf8vjPQ89+2z8bmc+G7sl38eHDhw8fvj1f+5hvv5WXBe2NfOP1uOGYHB8+fPjw4Rvxnd3qv1fW52t2A+oxOT58+PDhwxfztXB5+LgPBBumWa2fH7kek+PDhw8fPnyLF9Q24+pZ6JmN3tuA0v4XKXIfPnz48OHDF/NtHur3J5oTb4bis79soxU+fPjw4cN3lm+zCc9R2i36bKz+F4ILPnz48OHDN+Lbl/IzrDfK+lkYim4qPnz48OHD93G+ttzfRJD9eKAtDvDhw4cPH77v4UsQZ9xJjJgFjllUuvwuPnz48OHDd4gv4cgjQlsl5MV9O07Y1Pr48OHDhw/fG3ztgzyvFdo6ILm8HLcdikfngA8fPnz48C34rHbhw4cPHz4LHz58+Cx8+L54/QZDV3dlYRebHAAAAABJRU5ErkJggg==">
     
 </ul>
 
@@ -432,7 +432,7 @@
     </button>
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
-        <a class="post_tag-link" href="/tags/ETL/">ETL</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/kettle/">kettle</a>
+        <a class="post_tag-link" href="/tags/SQL/">SQL</a>
     </li></ul>
     
 
@@ -460,7 +460,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=kettle基础教程（一）简要介绍与安装部署&url=https://ebichu3.github.io/2019/03/08/kettle基础教程（一）简要介绍与安装部署/index.html&pic=https://ebichu3.github.io/img/favicon.png&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=由一个SQL问题引发的：WM_CONCAT、LISTAGG的用法&url=https://ebichu3.github.io/2019/07/23/一个SQL问题引发的思考：WM_CONCAT、LISTAGGRANK、DENSE_RANK的用法/index.html&pic=https://ebichu3.github.io/img/favicon.png&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -469,7 +469,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=kettle基础教程（一）简要介绍与安装部署&url=https://ebichu3.github.io/2019/03/08/kettle基础教程（一）简要介绍与安装部署/index.html&via=ebichu" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=由一个SQL问题引发的：WM_CONCAT、LISTAGG的用法&url=https://ebichu3.github.io/2019/07/23/一个SQL问题引发的思考：WM_CONCAT、LISTAGGRANK、DENSE_RANK的用法/index.html&via=ebichu" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -478,7 +478,7 @@
 
     <!-- Share Facebook -->
     
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=https://ebichu3.github.io/2019/03/08/kettle基础教程（一）简要介绍与安装部署/index.html" target="_blank">
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=https://ebichu3.github.io/2019/07/23/一个SQL问题引发的思考：WM_CONCAT、LISTAGGRANK、DENSE_RANK的用法/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Facebook
             </li>
@@ -493,7 +493,7 @@
 
     <!-- Share QQ -->
     
-        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=ebichu&#39;s Blog&title=kettle基础教程（一）简要介绍与安装部署&summary=ebichu&#39;s Blog&pics=https://ebichu3.github.io/img/favicon.png&url=https://ebichu3.github.io/2019/03/08/kettle基础教程（一）简要介绍与安装部署/index.html" target="_blank">
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=ebichu&#39;s Blog&title=由一个SQL问题引发的：WM_CONCAT、LISTAGG的用法&summary=ebichu&#39;s Blog&pics=https://ebichu3.github.io/img/favicon.png&url=https://ebichu3.github.io/2019/07/23/一个SQL问题引发的思考：WM_CONCAT、LISTAGGRANK、DENSE_RANK的用法/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 QQ
             </li>
@@ -512,62 +512,44 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <h2 id="简要介绍"><a href="#简要介绍" class="headerlink" title="简要介绍"></a>简要介绍</h2><p>Pentaho Data Integration（PDI，也称为<em>Kettle</em>）是Pentaho的组件，负责提取，转换和加载（ETL）过程。虽然ETL工具最常用于数据仓库环境，但PDI也可用于其他目的：</p>
-<ul>
-<li>在应用程序或数据库之间迁移数据</li>
-<li>将数据从数据库导出到平面文件</li>
-<li>将数据大量加载到数据库中</li>
-<li>数据清理</li>
-<li>集成应用程序</li>
+        <p>详细数据如图一，含义为名字为甲乙丙的三人不限次数任意参加python、c++、java考试，得到的分数等级在第三列。</p>
+<p>现需要筛选出只参过一种考试的人名和科目，结果应如图二。在oracle下SQL该如何写？</p>
+<p><img src="/2019/07/23/一个SQL问题引发的思考：WM_CONCAT、LISTAGGRANK、DENSE_RANK的用法/1.png" alt=""></p>
+<p>图一</p>
+<p><img src="/2019/07/23/一个SQL问题引发的思考：WM_CONCAT、LISTAGGRANK、DENSE_RANK的用法/2.png" alt=""></p>
+<p>图二</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> temp_table (<span class="keyword">name</span> <span class="built_in">varchar</span>(<span class="number">255</span>), course <span class="built_in">varchar</span>(<span class="number">255</span>), score <span class="built_in">varchar</span>(<span class="number">255</span>));</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> temp_table <span class="keyword">VALUES</span> (<span class="string">'甲'</span>, <span class="string">'python'</span>, <span class="string">'c'</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> temp_table <span class="keyword">VALUES</span> (<span class="string">'甲'</span>, <span class="string">'python'</span>, <span class="string">'b'</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> temp_table <span class="keyword">VALUES</span> (<span class="string">'甲'</span>, <span class="string">'python'</span>, <span class="string">'a'</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> temp_table <span class="keyword">VALUES</span> (<span class="string">'乙'</span>, <span class="string">'python'</span>, <span class="string">'a'</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> temp_table <span class="keyword">VALUES</span> (<span class="string">'乙'</span>, <span class="string">'c++'</span>, <span class="string">'a'</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> temp_table <span class="keyword">VALUES</span> (<span class="string">'丙'</span>, <span class="string">'python'</span>, <span class="string">'c'</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> temp_table <span class="keyword">VALUES</span> (<span class="string">'丙'</span>, <span class="string">'java'</span>, <span class="string">'c'</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> temp_table <span class="keyword">VALUES</span> (<span class="string">'丙'</span>, <span class="string">'java'</span>, <span class="string">'b'</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> temp_table <span class="keyword">VALUES</span> (<span class="string">'丙'</span>, <span class="string">'java'</span>, <span class="string">'a'</span>);</span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> temp_table;</span><br></pre></td></tr></table></figure>
+<p>思路一：首先在name、course两列做去重处理。然后以name做分组，过滤出统计数量为一的记录。最后在进行关联得到name、course两列。</p>
+<p>A1:最后关联的步骤使用join连接的方式。<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> </span><br><span class="line">	<span class="keyword">DISTINCT</span> t.name,</span><br><span class="line">	tt.course</span><br><span class="line"><span class="keyword">FROM</span> </span><br><span class="line">	(<span class="keyword">SELECT</span> </span><br><span class="line">		<span class="keyword">name</span></span><br><span class="line">	<span class="keyword">FROM</span> (</span><br><span class="line">		<span class="keyword">SELECT</span> <span class="keyword">DISTINCT</span> <span class="keyword">name</span>, course </span><br><span class="line">		<span class="keyword">FROM</span> TEMP_TABLE</span><br><span class="line">		) </span><br><span class="line">	<span class="keyword">GROUP</span> <span class="keyword">BY</span> <span class="keyword">name</span></span><br><span class="line">	<span class="keyword">HAVING</span> <span class="keyword">count</span>(<span class="number">1</span>) = <span class="number">1</span>) t </span><br><span class="line"><span class="keyword">INNER</span> <span class="keyword">JOIN</span> TEMP_TABLE tt <span class="keyword">ON</span> t.name = tt.name</span><br></pre></td></tr></table></figure></p>
+<p>A2:感觉A1的方式有点啰嗦，所以最后的步骤使用的嵌套子查询。<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">	t.name,</span><br><span class="line">	(<span class="keyword">SELECT</span> <span class="keyword">DISTINCT</span> course <span class="keyword">FROM</span> TEMP_TABLE <span class="keyword">WHERE</span> <span class="keyword">name</span> = t.name) course</span><br><span class="line"><span class="keyword">FROM</span> (</span><br><span class="line">	<span class="keyword">SELECT</span> </span><br><span class="line">		<span class="keyword">DISTINCT</span> <span class="keyword">name</span>, </span><br><span class="line">		course</span><br><span class="line">	<span class="keyword">FROM</span> TEMP_TABLE) t</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> t.name</span><br><span class="line"><span class="keyword">HAVING</span> <span class="keyword">count</span>(<span class="number">1</span>) = <span class="number">1</span></span><br></pre></td></tr></table></figure></p>
+<p>觉得思路一总的来看还是有点啰嗦，故发给小伙伴们讨论更优解。思路二就是来自小伙伴的想法。</p>
+<p>思路二：首先使用函数把name相同的course列以特殊字符拼接在一行中，然后在此基础上过滤出没有特殊字符的记录。</p>
+<p>A3:使用WM_CONCAT函数，可以在函数中直接做去重处理。<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> </span><br><span class="line">	<span class="keyword">name</span>,</span><br><span class="line">	course</span><br><span class="line"><span class="keyword">FROM</span> (</span><br><span class="line">	<span class="keyword">SELECT</span> <span class="keyword">name</span>, WM_CONCAT(<span class="keyword">DISTINCT</span> course) course </span><br><span class="line">	<span class="keyword">FROM</span> TEMP_TABLE t </span><br><span class="line">	<span class="keyword">GROUP</span> <span class="keyword">BY</span> t.name</span><br><span class="line">) </span><br><span class="line"><span class="keyword">WHERE</span> course <span class="keyword">NOT</span> <span class="keyword">LIKE</span>  <span class="string">'%,%'</span></span><br></pre></td></tr></table></figure></p>
+<p>A4:使用LISTAGG函数，要提前做去重处理再使用函数。<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> </span><br><span class="line">	<span class="keyword">name</span>,</span><br><span class="line">	course</span><br><span class="line"><span class="keyword">FROM</span> (</span><br><span class="line">	<span class="keyword">SELECT</span> t.name, <span class="keyword">LISTAGG</span>(t.course, <span class="string">';'</span>) <span class="keyword">WITHIN</span> <span class="keyword">GROUP</span> (<span class="keyword">ORDER</span> <span class="keyword">BY</span> t.name, t.course) course</span><br><span class="line">	<span class="keyword">FROM</span> (</span><br><span class="line">	<span class="keyword">SELECT</span> <span class="keyword">DISTINCT</span> <span class="keyword">name</span>, course </span><br><span class="line">	<span class="keyword">FROM</span> TEMP_TABLE</span><br><span class="line">	) t </span><br><span class="line">	<span class="keyword">GROUP</span> <span class="keyword">BY</span> t.name</span><br><span class="line">) </span><br><span class="line"><span class="keyword">WHERE</span> course <span class="keyword">NOT</span> <span class="keyword">LIKE</span>  <span class="string">'%;%'</span></span><br></pre></td></tr></table></figure></p>
+<h6 id="总结：WM-CONCAT、LISTAGG的用法"><a href="#总结：WM-CONCAT、LISTAGG的用法" class="headerlink" title="总结：WM_CONCAT、LISTAGG的用法"></a>总结：WM_CONCAT、LISTAGG的用法</h6><ul>
+<li>WM_CONCAT不出现在12c中，所以不建议使用这个函数。但是还是列出了它的不同用法。</li>
 </ul>
-<p><em>Kettle</em>易于使用。每个进程都使用图形工具创建，可以在其中指定要执行的操作，而无需编写代码来指示如何执行操作; 因此可以说<em>Kettle</em>是<em>面向元数据的</em>。</p>
-<p><em>Kettle</em>可以用作独立应用程序，也可以用作较大的Pentaho Suite的一部分。作为ETL工具，它是最流行的开源工具。<em>Kettle</em>支持大量输入和输出格式，包括文本文件，数据表以及商业和免费数据库引擎。此外，<em>Kettle</em>的转换功能允许用户在极少数限制的情况下操作数据。</p>
-<h2 id="下载与安装"><a href="#下载与安装" class="headerlink" title="下载与安装"></a>下载与安装</h2><h3 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h3><blockquote>
-<p><a href="https://sourceforge.net/projects/pentaho/" target="_blank" rel="noopener">https://sourceforge.net/projects/pentaho/</a><br>我下载的是pdi-ce-7.0.0.0-25，所以示例都是根据此版本。</p>
-<p><a href="https://www.oracle.com/technetwork/java/javase/downloads/index.html" target="_blank" rel="noopener">https://www.oracle.com/technetwork/java/javase/downloads/index.html</a>  </p>
-<p>JDK下载地址</p>
-</blockquote>
-<table>
-<thead>
-<tr>
-<th>PDI Versions</th>
-<th>5.1</th>
-<th>5.2/5.3/5.4</th>
-<th>6.0/6.1</th>
-<th>7.0/7.1/8.0/8.1</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Java Versions</td>
-<td>7</td>
-<td>6（build targets）/7</td>
-<td>7/8</td>
-<td>8</td>
-</tr>
-</tbody>
-</table>
-<p>Kettle是由Java编写的免安装软件，运行该软件前需安装jdk，请注意版本适应。</p>
-<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><h4 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h4><h5 id="设置Java环境变量"><a href="#设置Java环境变量" class="headerlink" title="设置Java环境变量"></a>设置Java环境变量</h5><p>网上很多教程，本文不再赘述。</p>
-<h5 id="安装kettle"><a href="#安装kettle" class="headerlink" title="安装kettle"></a>安装kettle</h5><p>kettle不需要安装，只需将zip文件解压缩，进入<em>data-integration</em>文件夹，双击运行Spoon.bat文件即可使用kettle图形用户界面。为了方便使用，建议创建Spoon.bat文件桌面快捷方式，图标使用spoon.ico。<br><img src="/2019/03/08/kettle基础教程（一）简要介绍与安装部署/1.png" alt=""></p>
-<p>安装成功出现以下界面</p>
-<p><img src="/2019/03/08/kettle基础教程（一）简要介绍与安装部署/2.png" alt=""></p>
-<h4 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h4><h5 id="安装jdk并设置环境变量"><a href="#安装jdk并设置环境变量" class="headerlink" title="安装jdk并设置环境变量"></a>安装jdk并设置环境变量</h5><p>网上很多教程，本文不再赘述。</p>
-<h5 id="安装kettle-1"><a href="#安装kettle-1" class="headerlink" title="安装kettle"></a>安装kettle</h5><p>创建一个目录，将下载好的kettle解压后放在该文件夹下。</p>
-<pre><code>#mkdir  /root/software/kettle
-#cp  /root/pdi-ce-7.0.0.0-25.zip  /root/software/kettle
-#cd   /root/software/kettle
-#unzip pdi-ce-7.0.0.0-25.zip
-#cd  data-integration 
-#ll  *.sh
-#chmod  +x  *.sh  //赋予.sh结尾的文件必须拥有执行权限
-</code></pre><p>测试安装是否成功</p>
-<p>在kettle的data-integration目录中执行kitchen.sh文件。</p>
-<pre><code>#./kitchen.sh //执行作业
-#./pan.sh //执行转换
-</code></pre><p>安装成功出现帮助信息界面</p>
-<p><img src="/2019/03/08/kettle基础教程（一）简要介绍与安装部署/3.png" alt=""></p>
-<p><em>以上。</em></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> </span><br><span class="line">	<span class="keyword">name</span>, </span><br><span class="line">	WM_CONCAT(course) course </span><br><span class="line"><span class="keyword">FROM</span> </span><br><span class="line">	TEMP_TABLE t </span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> t.name</span><br></pre></td></tr></table></figure>
+<p><img src="/2019/07/23/一个SQL问题引发的思考：WM_CONCAT、LISTAGGRANK、DENSE_RANK的用法/3.png" alt=""></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> </span><br><span class="line">	<span class="keyword">name</span>, </span><br><span class="line">	WM_CONCAT(<span class="keyword">DISTINCT</span> course) course </span><br><span class="line"><span class="keyword">FROM</span> </span><br><span class="line">	TEMP_TABLE t </span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> t.name</span><br></pre></td></tr></table></figure>
+<p><img src="/2019/07/23/一个SQL问题引发的思考：WM_CONCAT、LISTAGGRANK、DENSE_RANK的用法/4.png" alt=""></p>
+<ul>
+<li>LISTAGG在11.2版本之后可以使用。</li>
+</ul>
+<p><img src="/2019/07/23/一个SQL问题引发的思考：WM_CONCAT、LISTAGGRANK、DENSE_RANK的用法/5.png" alt=""></p>
+<p>对于指定的列，<code>LISTAGG</code>对子<code>ORDER</code> <code>BY</code>句中指定的每个组内的数据进行排序，然后连接列的值。</p>
+<ul>
+<li>作为单集聚合函数，<code>LISTAGG</code>对所有行进行操作并返回单个输出行。</li>
+<li>作为一个组集聚合，该函数操作并返回该<code>GROUP</code> <code>BY</code>子句定义的每个组的输出行。</li>
+<li>作为分析函数，<code>LISTAGG</code>根据中的一个或多个表达式将查询结果集划分为组<code>query_partition_clause</code>。</li>
+</ul>
+<p>函数的参数遵循以下规则：</p>
+<ul>
+<li><code>measure_expr</code>可以是任何列。度量列中的空值将被忽略。</li>
+<li><code>delimiter_expr</code>指定是分开测量的值的字符串。该子句是可选的，默认为<code>NULL</code>。</li>
+<li>在<code>order_by_clause</code>决定了被返回连接值的顺序。仅当<code>ORDER</code> <code>BY</code>列列表实现唯一排序时，该功能才是确定性的。</li>
+</ul>
+<p>如果列是<code>RAW</code>类型，返回数据类型是<code>RAW</code>，否则返回值是<code>VARCHAR2</code>类型。</p>
 
         
             <!-- css -->
@@ -689,7 +671,7 @@
             // facebook-like distraction free mode
             distractionFreeMode: false,
             <!-- 解决issue的label过长导致Error: Validation Failed add by lyz 20190326 -->
-            id: 'kettle基础教程（一）简要介绍与安装部署'
+            id: '由一个SQL问题引发的：WM_CONCAT、LISTAGG的用法'
         })
    gitalk.render('gitalk-container')
 </script>
@@ -708,19 +690,19 @@
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/2019/03/10/kettle基础教程（二）开始你的第一个kettle例子吧/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            新篇
-        </a>
-    
 
     <!-- Section Spacer -->
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
+    
+        <a href="/2019/07/23/一个SQL引发的一切/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
     
 </nav>
 
