@@ -1,0 +1,1535 @@
+<!DOCTYPE html>
+<html style="display: none;" lang="zh">
+    <head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.5.6 -->
+    <script>
+        window.materialVersion = "1.5.6"
+        // Delete localstorage with these tags
+        window.oldVersion = [
+            'codestartv1',
+            '1.3.4',
+            '1.4.0',
+            '1.4.0b1',
+            '1.5.0',
+            '1.5.2',
+            '1.5.5'
+        ]
+    </script>
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+
+
+    <link rel="dns-prefetch" href="https://busuanzi.ibruce.info">
+
+
+
+
+
+
+
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+
+
+
+
+    <!-- Meta & Info -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!-- Title -->
+    
+    <title>
+        
+            Spoon用户指南：01Spoon简介 | 
+        
+        ebichu&#39;s Blog
+    </title>
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/favicon.png">
+    <link rel="icon" href="/img/favicon.png">
+
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" itemprop="description" content="ebichu&#39;s Blog">
+    <meta name="keywords" content="blog ETL bigdata,kettle,DOCUMENT">
+    <meta name="theme-color" content="#0097A7">
+
+    <!-- Disable Fucking Bloody Baidu Tranformation -->
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.zhCN.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import lsloader -->
+    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(a){try{localStorage.removeItem(a)}catch(b){}};lsloader.setLS=function(a,c){try{localStorage.setItem(a,c)}catch(b){}};lsloader.getLS=function(a){var c="";try{c=localStorage.getItem(a)}catch(b){c=""}return c};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var b=[];for(var a=0;a<localStorage.length;a++){b.push(localStorage.key(a))}b.forEach(function(e){var f=lsloader.getLS(e);if(window.oldVersion){var d=window.oldVersion.reduce(function(g,h){return g||f.indexOf("/*"+h+"*/")!==-1},false);if(d){lsloader.removeLS(e)}}})}catch(c){}};lsloader.clean();lsloader.load=function(f,a,b,d){if(typeof b==="boolean"){d=b;b=undefined}d=d||false;b=b||function(){};var e;e=this.getLS(f);if(e&&e.indexOf(versionString)===-1){this.removeLS(f);this.requestResource(f,a,b,d);return}if(e){var c=e.split(versionString)[0];if(c!=a){console.log("reload:"+a);this.removeLS(f);this.requestResource(f,a,b,d);return}e=e.split(versionString)[1];if(d){this.jsRunSequence.push({name:f,code:e});this.runjs(a,f,e)}else{document.getElementById(f).appendChild(document.createTextNode(e));b()}}else{this.requestResource(f,a,b,d)}};lsloader.requestResource=function(b,e,a,c){var d=this;if(c){this.iojs(e,b,function(h,f,g){d.setLS(f,h+versionString+g);d.runjs(h,f,g)})}else{this.iocss(e,b,function(f){document.getElementById(b).appendChild(document.createTextNode(f));d.setLS(b,e+versionString+f)},a)}};lsloader.iojs=function(d,b,g){var a=this;a.jsRunSequence.push({name:b,code:""});try{var f=new XMLHttpRequest();f.open("get",d,true);f.onreadystatechange=function(){if(f.readyState==4){if((f.status>=200&&f.status<300)||f.status==304){if(f.response!=""){g(d,b,f.response);return}}a.jsfallback(d,b)}};f.send(null)}catch(c){a.jsfallback(d,b)}};lsloader.iocss=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.iofonts=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.runjs=function(f,c,e){if(!!c&&!!e){for(var b in this.jsRunSequence){if(this.jsRunSequence[b].name==c){this.jsRunSequence[b].code=e}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var a=document.createElement("script");a.appendChild(document.createTextNode(this.jsRunSequence[0].code));a.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(a);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else{if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var d=this;var a=document.createElement("script");a.src=this.jsRunSequence[0].path;a.type="text/javascript";this.jsRunSequence[0].status="loading";a.onload=function(){d.jsRunSequence.shift();if(d.jsRunSequence.length>0){d.runjs()}};document.body.appendChild(a)}}};lsloader.tagLoad=function(b,a){this.jsRunSequence.push({name:a,code:"",path:b,status:"failed"});this.runjs()};lsloader.jsfallback=function(c,b){if(!!this.jsnamemap[b]){return}else{this.jsnamemap[b]=b}for(var a in this.jsRunSequence){if(this.jsRunSequence[a].name==b){this.jsRunSequence[a].code="";this.jsRunSequence[a].status="failed";this.jsRunSequence[a].path=c}}this.runjs()};lsloader.cssfallback=function(e,c,b){if(!!this.cssnamemap[c]){return}else{this.cssnamemap[c]=1}var d=document.createElement("link");d.type="text/css";d.href=e;d.rel="stylesheet";d.onload=d.onerror=b;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(d,a)};lsloader.runInlineScript=function(c,b){var a=document.getElementById(b).innerText;this.jsRunSequence.push({name:c,code:a});this.runjs()}})();</script>
+
+    <!-- Import queue -->
+    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
+
+    <!-- Import CSS -->
+    
+        <style id="material_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_css","/css/material.min.css?Z7a72R1E4SxzBKR/WGctOA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+        <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?NKhlKQkXw/c66TR5p4wO+w==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+        
+
+    
+
+    
+
+    <!-- Config CSS -->
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    overflow-x: hidden !important;
+  }
+  
+  code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  }
+
+  a {
+    color: #00838F;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #0097A7 !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #0097A7 !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #0097A7 !important;
+  }
+
+  .toTop {
+    background: #757575 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #757575;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #757575;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #757575;
+  }
+
+  .post-toc a:hover {
+    color: #00838F;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-image: url(/img/bg1.jpg);
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+      .fade {
+        transition: all 800ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
+
+
+<!-- Import Font -->
+<!-- Import Roboto -->
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+
+
+<!-- Import Material Icons -->
+
+
+    <style id="material_icons"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_icons","/css/material-icons.css?pqhB/Rd/ab0H2+kZp0RDmw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+
+
+
+    <!-- Import jQuery -->
+    
+        <script>lsloader.load("jq_js","/js/jquery.min.js?qcusAULNeBksqffqUM2+Ig==", true)</script>
+    
+
+    <!-- WebAPP Icons -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="ebichu&#39;s Blog">
+    <meta name="msapplication-starturl" content="https://ebichu3.github.io/2019/03/12/Spoon用户指南：01Spoon简介/">
+    <meta name="msapplication-navbutton-color" content="#0097A7">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="ebichu&#39;s Blog">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="/img/favicon.png">
+
+    <!-- Site Verification -->
+    
+    
+
+    <!-- RSS -->
+    
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="https://ebichu3.github.io/2019/03/12/Spoon用户指南：01Spoon简介/">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="Spoon用户指南：01Spoon简介 | ebichu&#39;s Blog">
+    <meta property="og:image" content="/img/favicon.png">
+    <meta property="og:description" content="ebichu&#39;s Blog">
+    <meta property="og:article:tag" content="kettle"> <meta property="og:article:tag" content="DOCUMENT"> 
+
+    
+        <meta property="article:published_time" content="Tue Mar 12 2019 19:31:00 GMT+0800">
+        <meta property="article:modified_time" content="Tue Jul 30 2019 10:45:57 GMT+0800">
+    
+
+    <!-- The Twitter Card protocol -->
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Add canonical link for SEO -->
+    
+        <link rel="canonical" href="https://ebichu3.github.io/2019/03/12/Spoon用户指南：01Spoon简介/index.html">
+    
+
+    <!-- Structured-data for SEO -->
+    
+        
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "https://ebichu3.github.io/2019/03/12/Spoon用户指南：01Spoon简介/index.html",
+    "headline": "Spoon用户指南：01Spoon简介",
+    "datePublished": "Tue Mar 12 2019 19:31:00 GMT+0800",
+    "dateModified": "Tue Jul 30 2019 10:45:57 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "ebichu",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/touxiang.jpg"
+        },
+        "description": "Have a nice day : )"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "ebichu&#39;s Blog",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/favicon.png"
+        }
+    },
+    "keywords": ",kettle,DOCUMENTblog ETL bigdata",
+    "description": "ebichu&#39;s Blog",
+}
+</script>
+
+
+    
+
+    <!-- Analytics -->
+    
+    
+    
+
+    <!-- Custom Head -->
+    
+
+</head>
+
+
+    
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span id="MD-burger-id" class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn" class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装Spoon"><span class="post-toc-number">1.</span> <span class="post-toc-text">安装Spoon</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#启动Spoon"><span class="post-toc-number">2.</span> <span class="post-toc-text">启动Spoon</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#支持的平台"><span class="post-toc-number">3.</span> <span class="post-toc-text">支持的平台</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#已知的问题"><span class="post-toc-number">4.</span> <span class="post-toc-text">已知的问题</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#用户界面概述"><span class="post-toc-number">5.</span> <span class="post-toc-text">用户界面概述</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#命令行选项"><span class="post-toc-number">6.</span> <span class="post-toc-text">命令行选项</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#资源库"><span class="post-toc-number">7.</span> <span class="post-toc-text">资源库</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#资源库自动登录"><span class="post-toc-number">7.1.</span> <span class="post-toc-text">资源库自动登录</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#许可证"><span class="post-toc-number">8.</span> <span class="post-toc-text">许可证</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#转换定义"><span class="post-toc-number">9.</span> <span class="post-toc-text">转换定义</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#作业定义"><span class="post-toc-number">10.</span> <span class="post-toc-text">作业定义</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#工具栏图标"><span class="post-toc-number">11.</span> <span class="post-toc-text">工具栏图标</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Spoon选项"><span class="post-toc-number">12.</span> <span class="post-toc-text">Spoon选项</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#常规选项卡"><span class="post-toc-number">12.1.</span> <span class="post-toc-text">常规选项卡</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#外观和感受选项卡"><span class="post-toc-number">12.2.</span> <span class="post-toc-text">外观和感受选项卡</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#搜索元数据"><span class="post-toc-number">13.</span> <span class="post-toc-text">搜索元数据</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#设置环境变量"><span class="post-toc-number">14.</span> <span class="post-toc-text">设置环境变量</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#显示环境变量"><span class="post-toc-number">14.0.1.</span> <span class="post-toc-text">显示环境变量</span></a></li></ol></li></ol><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#执行日志历史记录"><span class="post-toc-number">15.</span> <span class="post-toc-text">执行日志历史记录</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#重新执行"><span class="post-toc-number">16.</span> <span class="post-toc-text">重新执行</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#生成针对目标步骤的映射"><span class="post-toc-number">17.</span> <span class="post-toc-text">生成针对目标步骤的映射</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#生成映射示例"><span class="post-toc-number">17.1.</span> <span class="post-toc-text">生成映射示例</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安全模式"><span class="post-toc-number">18.</span> <span class="post-toc-text">安全模式</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#欢迎页面"><span class="post-toc-number">19.</span> <span class="post-toc-text">欢迎页面</span></a></li>
+    </ul>
+    
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
+
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').addClass('lazy');
+</script>
+
+        
+    
+            <p class="article-headline-p">
+                Spoon用户指南：01Spoon简介
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/touxiang.jpg" width="44px" height="44px" alt="Author Avatar">
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>ebichu</strong>
+        <span>3月 12, 2019</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">devices other</i>
+    <span class="visuallyhidden">devices other</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
+    <li class="mdl-menu__item">在其它设备中阅读本文章</li>
+    
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAAC30lEQVR42u3aQXLjMAwEQP//07vXXKyaIeSyTLZOqYoisXVBMMDr35HXCxsbGxsbGxsbG/uR7Fd8/b3/+glvX/zmOdd/9e7+/MzY2NjYJ7DzV17/VX2Uy497/Zb6zNjY2NgHsJOi1WLat7RFtCi02NjY2NhxYUsOmhfCti3BxsbGxs6DpOtylQRMkxKIjY2NjT2J5vOSc29J+1qWho2Njf149iTQ+dbPX5tvY2NjYz+MPbnaEKotRUlLU5wWGxsbe1P2WpsxaS3WIqp8OLGYpWFjY2Nvyl4bxLbD4HuDqqIDw8bGxt6OnQ9i23FC/rR26Fvcg42NjX0M+66SdtfaTfuEOlTCxsbG/nH2vf/0t4FROzBoSxo2Njb2Cex56J9/suTz5eMEbGxsbOxJ6UpgOS9vRfKRQ9SBYWNjY2/Bbhd31gpY0lTkn3htgIGNjY29K3tt/WXtw7XUyUigaEWwsbGxf5y9NtBdW+7Jw6P2c0cFFRsbG3tTdn7QtbCpDary99ZDBWxsbOxN2flAtx0M563L2pi5fTs2Njb2aexJqFQ3CUvvaiMwbGxs7NPYa3F82yQkd9aFChsbG/swdhvuJL/Nm4o8MJoMHrCxsbFPYOfg+UpN3qK0LVM96MXGxsbejp2s6dQrj+Uz8zbjIzun2NjY2D/IziOhtWWdtSFB2yxFd2JjY2Nvyl4L9PMFnTxCastSuzyEjY2NvSu7PXReSNrFmvm4t17ZwcbGxt6C3S7itBHPXUWxXQlanIpgY2Nj/yC7vdoBcBtU5c+vSyw2Njb2pux28bEtIUkLkURUk2ALGxsb+wT2POJfW6PJQ/+PFDBsbGzs7diTID5vKtpwPy+uiwUMGxsb+2B2PiSYD3TzYUAx6MXGxsY+kj0/0Npyz7ztwcbGxj6BnYdK81g/KV2TsveR8QA2Njb2g9mTQW/7Ieb3Jx/04ys72NjY2I9hn3NhY2NjY2NjY2NjP+b6D7M22LvBIF2BAAAAAElFTkSuQmCC">
+    
+</ul>
+
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/DOCUMENT/">DOCUMENT</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/kettle/">kettle</a>
+    </li></ul>
+    
+
+    <!-- Share -->
+    
+        <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+        
+            <!-- Busuanzi Views -->
+            <a class="post_share-link" href="#">
+                <li class="mdl-menu__item">
+                    <span id="busuanzi_container_page_pv">
+                        <span id="busuanzi_value_page_pv"></span>&nbsp;浏览量
+                    </span>
+                </li>
+            </a>
+        
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Spoon用户指南：01Spoon简介&url=https://ebichu3.github.io/2019/03/12/Spoon用户指南：01Spoon简介/index.html&pic=https://ebichu3.github.io/img/favicon.png&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Spoon用户指南：01Spoon简介&url=https://ebichu3.github.io/2019/03/12/Spoon用户指南：01Spoon简介/index.html&via=ebichu" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=https://ebichu3.github.io/2019/03/12/Spoon用户指南：01Spoon简介/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=ebichu&#39;s Blog&title=Spoon用户指南：01Spoon简介&summary=ebichu&#39;s Blog&pics=https://ebichu3.github.io/img/favicon.png&url=https://ebichu3.github.io/2019/03/12/Spoon用户指南：01Spoon简介/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+    
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <p><strong>什么是Spoon？</strong></p>
+<p>Kettle是“Kettle E.T.T.L. Environment.”的首字母缩写。Kettle旨在帮助您满足您的ETTL需求，包括数据的提取，转换，运输和加载。</p>
+<p>Spoon是一个图形用户界面，允许您设计可以使用Kettle工具–Pan和Kitchen运行的转换和作业。Pan是一种数据转换引擎，可执行多种功能，例如从各种数据源读取，操作和写入数据。Kitchen是一个程序，用于执行由Spoon在XML或数据库资源库中设计的作业。作业通常以批处理模式安排，以定期自动运行。</p>
+<blockquote>
+<p><strong>注意</strong>：有关Pan或Kitchen的完整说明，请参阅Pan和Kitchen用户指南。</p>
+</blockquote>
+<p>转换和作业可以使用XML文件描述自己，也可以放在Kettle数据库资源库中。然后，Pan或Kitchen可以读取数据以执行转换中描述的步骤或运行作业。总之，Pentaho Data Integration使数据仓库更易于构建，更新和维护。</p>
+<p>本节介绍以下主题：</p>
+<ul>
+<li>安装 Spoon</li>
+<li>启动 Spoon</li>
+<li>支持的平台</li>
+<li>已知的问题</li>
+<li>用户界面概述</li>
+<li>命令行选项</li>
+<li>资源库</li>
+<li>许可证</li>
+<li>转换定义</li>
+<li>作业定义</li>
+<li>工具栏图标</li>
+<li>Spoon 选项</li>
+<li>搜索元数据</li>
+<li>设置环境变量</li>
+<li>执行日志历史记录</li>
+<li>重新执行</li>
+<li>生成针对目标步骤的映射</li>
+<li>安全模式</li>
+<li>欢迎界面</li>
+</ul>
+<h2 id="安装Spoon"><a href="#安装Spoon" class="headerlink" title="安装Spoon"></a>安装Spoon</h2><p>按照以下说明安装Spoon：</p>
+<ol>
+<li>安装Sun Microsystems Java Runtime Environment 1.5或更高版本。您可以在<a href="http://www.javasoft.com/" target="_blank" rel="noopener">http://www.javasoft.com/</a>免费下载JRE 。</li>
+<li>将二进制分发zip文件解压缩到您选择的目录中。</li>
+<li>在类Unix环境（例如Solaris，Linux，MacOS）下，必须使shell脚本可执行。执行这些命令以使Kettle目录中的所有shell脚本都可执行：</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd Kettle</span><br><span class="line">chmod +x *.sh</span><br></pre></td></tr></table></figure>
+<h2 id="启动Spoon"><a href="#启动Spoon" class="headerlink" title="启动Spoon"></a>启动Spoon</h2><p>下面的脚本允许您在不同平台上启动Spoon：</p>
+<ul>
+<li><strong>Spoon.bat：</strong>在Windows平台上启动Spoon。</li>
+<li><strong>spoon.sh：</strong>在类似Unix的平台上启动Spoon，例如Linux，Apple OSX，Solaris</li>
+</ul>
+<p>要在Windows平台下创建快捷方式，需要提供一个图标。使用“spoon.ico”设置正确的图标。将快捷方式指向spoon.bat文件。</p>
+<h2 id="支持的平台"><a href="#支持的平台" class="headerlink" title="支持的平台"></a>支持的平台</h2><p>以下平台支持Spoon GUI：</p>
+<ul>
+<li>Microsoft Windows：自Windows 95以来的所有平台，包括Vista</li>
+<li>Linux GTK：在i386和x86_64处理器上，最适合Gnome</li>
+<li>Apple的OSX：适用于PowerPC和Intel机器</li>
+<li>Solaris：使用Motif接口（GTK可选）</li>
+<li>AIX：使用Motif接口</li>
+<li>HP-UX：使用Motif界面（GTK可选）</li>
+<li>FreeBSD：对i386的初步支持，尚未在x86_64上</li>
+</ul>
+<h2 id="已知的问题"><a href="#已知的问题" class="headerlink" title="已知的问题"></a>已知的问题</h2><p>以下是与Spoon相关的已知问题列表。</p>
+<p><strong>Linux</strong><br>偶尔的JVM崩溃运行SuSE Linux和KDE。在Gnome下运行没有任何问题。（在SUSE Linux 10.1上检测到但早期版本也存在同样的问题）</p>
+<p><strong>FreeBSD</strong><br>拖放问题。使用画布上的右键单击弹出菜单作为变通方法。</p>
+<p>查看<a href="http://jira.pentaho.com/" target="_blank" rel="noopener">http://jira.pentaho.com</a>上的跟踪器列表，以获取有关最近发现的问题的最新信息。</p>
+<h2 id="用户界面概述"><a href="#用户界面概述" class="headerlink" title="用户界面概述"></a>用户界面概述</h2><p>Spoon左上方面板中的主树允许您浏览与已打开的作业和转换相关联的连接。在设计转换时，左下方面板中的核心对象包含用于构建转换的可用步骤，包括输入，输出，查找，转换，连接，脚本步骤等。设计作业时，核心对象的上下文包含可用的作业条目。核心对象栏包含各种作业条目类型。以下章节将详细介绍这些项目：03数据库连接，06 Hops，09转换步骤，11作业条目，12图形视图。</p>
+<h2 id="命令行选项"><a href="#命令行选项" class="headerlink" title="命令行选项"></a>命令行选项</h2><p>以下是启动Spoon应用程序时可以使用的命令行选项：</p>
+<p><strong>-file=<filename></filename></strong></p>
+<p>运行指定的转换或作业</p>
+<p>默认值：上次打开的文件</p>
+<ul>
+<li><strong>.ktr</strong>：Kettle Transformation</li>
+<li><strong>.kjb</strong>：Kettle Job</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-file=transform.ktr</span><br></pre></td></tr></table></figure>
+<p><strong>-logfile = <logging filename=""></logging></strong></p>
+<p>指定日志文件的位置。</p>
+<p>默认值：标准输出。 </p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-logfile=log_file.txt</span><br></pre></td></tr></table></figure>
+<p><strong>-level = <logging level=""></logging></strong>设置正在运行的转换的日志级别。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-level=Basic</span><br></pre></td></tr></table></figure>
+<p>以下是可能的值：</p>
+<table>
+<thead>
+<tr>
+<th>Nothing</th>
+<th>不显示任何输出</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Error</td>
+<td>仅显示错误</td>
+</tr>
+<tr>
+<td>Minimal</td>
+<td>使用最少的日志</td>
+</tr>
+<tr>
+<td>Basic</td>
+<td>这是默认的基本日志记录级别</td>
+</tr>
+<tr>
+<td>Detailed</td>
+<td>提供详细的日志输出</td>
+</tr>
+<tr>
+<td>Debug</td>
+<td>显示详细输出以进行调试。</td>
+</tr>
+<tr>
+<td>Rowlevel</td>
+<td>行级详细记录。警告 - 这会生成大量数据。</td>
+</tr>
+</tbody>
+</table>
+<p><strong>-rep=<repository name=""> -user=<username> -pass=<password> -trans=<transname></transname></password></username></repository></strong></p>
+<p><strong>-rep=<repository name=""> -user=<username> -pass=<password> -job=<jobname></jobname></password></username></repository></strong> </p>
+<p>启动时自动从资源库加载转换或作业。 </p>
+<blockquote>
+<p>您必须指定选项 <strong>-user</strong>, <strong>-pass</strong> , <strong>-job</strong> and<em>-trans</em>。</p>
+<p>资源库详细信息从本地目录或Kettle目录中的文件<strong>repositories.xml</strong>加载：</p>
+</blockquote>
+<ul>
+<li>$HOME/.kettle/</li>
+<li>C:\Documents and Settings\<username>.kettle on Windows.</username></li>
+</ul>
+<p>默认值：对话框将询问资源库详细信息</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-rep=repos -user=admin -pass=adminpasswd -trans=trans.ktr</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>* 重要*：</p>
+<ol>
+<li>在Windows上，Pentaho建议您使用<strong>/ option：value</strong>格式来避免MS-DOS shell的命令行解析问题。</li>
+<li>斜体字段表示选项使用的值。</li>
+<li>如果选项值中有空格，请使用引号或双引号; 引号确保选项值保持在一起。</li>
+</ol>
+</blockquote>
+<h2 id="资源库"><a href="#资源库" class="headerlink" title="资源库"></a>资源库</h2><p>Spoon允许您将转换和作业文件资源到本地文件系统或Kettle资源库中。Kettle资源库可以存放在任何常见的关系数据库中。要从数据库资源库加载转换，您必须连接到此资源库。启动Spoon时定义与资源库的数据库连接，如下所示：</p>
+<p><img src="/2019/03/12/Spoon用户指南：01Spoon简介/3.jpg" alt=""></p>
+<p>与资源库关联的信息存储在“repositories.xml”中。此文件位于默认主目录中的隐藏目录“.kettle”中。在Windows上，该文件位于C：\ Documents 和 Settings \ .kettle中</p>
+<blockquote>
+<p><strong>注意</strong>：与repositories.xml文件关联的完整路径和文件名将显示在Spoon控制台上。<br>如果每次启动Spoon时都不想显示“欢迎”对话框，请<strong>在启动时</strong>禁用“显示<strong>此对话框”</strong>或使用“编辑/选项”菜单下的“选项”对话框。</p>
+</blockquote>
+<blockquote>
+<p><strong>注意</strong>：管理员的默认密码是 <strong>admin</strong>。Pentaho强烈建议您使用资源库资源管理器或<strong>资源库/编辑用户</strong>菜单更改此默认密码。</p>
+</blockquote>
+<h3 id="资源库自动登录"><a href="#资源库自动登录" class="headerlink" title="资源库自动登录"></a>资源库自动登录</h3><p>您可以通过设置以下环境变量让Spoon自动登录到资源库：KETTLE_REPOSITORY，KETTLE_USER和KETTLE_PASSWORD。</p>
+<blockquote>
+<p><img src="https://wiki.pentaho.com/s/zh_CN/7901/0b59262db6a7cd3dbeee6d1b1416b77c01706b36/_/images/icons/emoticons/warning.svg" alt="(警告)"> <strong>重要提示</strong>：由于日志记录会自动带来安全风险，Pentaho强烈建议您始终锁定计算机以防止未经授权访问资源库。</p>
+</blockquote>
+<h2 id="许可证"><a href="#许可证" class="headerlink" title="许可证"></a>许可证</h2><p>从版本2.2.0开始，Kettle根据LGPL许可证发布到公共域。有关本许可证的全文，请参阅附录A.</p>
+<blockquote>
+<p><strong>注意</strong>：Pentaho Data Integration在下面被称为“Kettle”。</p>
+</blockquote>
+<p>版权所有（C）2006 Pentaho Corporation</p>
+<p>Kettle是免费软件; 您可以根据自由软件基金会发布的GNU宽通用公共许可证条款重新分发和/或修改它; 许可证的2.1版本，或（根据您的选择）任何更高版本。</p>
+<p>Kettle的分配是希望它有用，但没有任何保证; 甚至没有适销性或特定用途适用性的暗示保证。有关更多详细信息，请参阅GNU宽通用公共许可证。</p>
+<p>您应该已收到GNU宽通用公共许可证的副本以及Kettle分配; 如果没有，请写信给Free Software Foundation，Inc.，51 Franklin St，Fifth Floor，Boston，MA 02110-1301 USA</p>
+<h2 id="转换定义"><a href="#转换定义" class="headerlink" title="转换定义"></a>转换定义</h2><p>下表包含转换定义列表：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">转换</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Value</td>
+<td style="text-align:left">值是行的一部分，可以包含任何类型的数据：字符串，浮点数，无限精度BigNumbers，整数，日期或布尔值</td>
+</tr>
+<tr>
+<td style="text-align:left">Row</td>
+<td style="text-align:left">一行由0个或多个值组成，这些值作为单个条目一起处理。</td>
+</tr>
+<tr>
+<td style="text-align:left">Input Stream</td>
+<td style="text-align:left">进入步骤的一堆行</td>
+</tr>
+<tr>
+<td style="text-align:left">hop</td>
+<td style="text-align:left">两个步骤之间的一个或多个数据流的图形表示; 一个跃点始终表示一步的输出流，另一个表示输入流 - 流的数量等于目标步骤的副本（一个或多个）</td>
+</tr>
+<tr>
+<td style="text-align:left">note</td>
+<td style="text-align:left">可以添加到转换的描述性文本</td>
+</tr>
+</tbody>
+</table>
+<p><img src="/2019/03/12/Spoon用户指南：01Spoon简介/4.jpg" alt=""></p>
+<h2 id="作业定义"><a href="#作业定义" class="headerlink" title="作业定义"></a>作业定义</h2><p>下表包含作业定义列表：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">工作</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Job Entry</td>
+<td style="text-align:left">执行特定任务的作业的一部分</td>
+</tr>
+<tr>
+<td style="text-align:left">Hop</td>
+<td style="text-align:left">两个步骤之间的一个或多个数据流的图形表示; 一个跃点始终表示一步的输出流，另一个表示输入流 - 流的数量等于目标步骤的副本（一个或多个）</td>
+</tr>
+<tr>
+<td style="text-align:left">Note</td>
+<td style="text-align:left">可以添加到作业的描述性文本</td>
+</tr>
+</tbody>
+</table>
+<p><img src="/2019/03/12/Spoon用户指南：01Spoon简介/5.jpg" alt=""></p>
+<h2 id="工具栏图标"><a href="#工具栏图标" class="headerlink" title="工具栏图标"></a>工具栏图标</h2><p>主屏幕工具栏上的图标从左到右：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">图标</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><img src="https://wiki.pentaho.com/download/attachments/7700806/6.png?version=1&amp;modificationDate=1210851682000&amp;api=v2" alt="img"></td>
+<td style="text-align:left">创建新作业或转换</td>
+</tr>
+<tr>
+<td style="text-align:left"><img src="https://wiki.pentaho.com/download/attachments/7700806/7.png?version=1&amp;modificationDate=1210852033000&amp;api=v2" alt="img"></td>
+<td style="text-align:left">如果未连接到资源库，则从文件打开转换/作业;如果连接到资源库，则从资源库打开转换/作业。</td>
+</tr>
+<tr>
+<td style="text-align:left"><img src="https://wiki.pentaho.com/download/attachments/7700806/8.png?version=1&amp;modificationDate=1210852038000&amp;api=v2" alt="img"></td>
+<td style="text-align:left">将转换/作业保存到文件或资源库。</td>
+</tr>
+<tr>
+<td style="text-align:left"><img src="https://wiki.pentaho.com/download/attachments/7700806/9.png?version=1&amp;modificationDate=1210852042000&amp;api=v2" alt="img"></td>
+<td style="text-align:left">使用不同的名称或文件名保存转换/作业。</td>
+</tr>
+<tr>
+<td style="text-align:left"><img src="https://wiki.pentaho.com/download/attachments/7700806/10.png?version=1&amp;modificationDate=1210852046000&amp;api=v2" alt="img"></td>
+<td style="text-align:left">打开打印对话框。</td>
+</tr>
+<tr>
+<td style="text-align:left"><img src="https://wiki.pentaho.com/download/attachments/7700806/11.png?version=1&amp;modificationDate=1210852050000&amp;api=v2" alt="img"></td>
+<td style="text-align:left">运行转换/作业：从XML文件或资源库运行当前转换。</td>
+</tr>
+<tr>
+<td style="text-align:left"><img src="https://wiki.pentaho.com/download/attachments/7700806/12.png?version=1&amp;modificationDate=1210852055000&amp;api=v2" alt="img"></td>
+<td style="text-align:left">预览转换：从内存运行当前转换。您可以预览由选定步骤生成的行。</td>
+</tr>
+<tr>
+<td style="text-align:left"><img src="https://wiki.pentaho.com/download/attachments/7700806/13.png?version=1&amp;modificationDate=1210852059000&amp;api=v2" alt="img"></td>
+<td style="text-align:left">在调试模式下运行转换，允许您解决执行错误。</td>
+</tr>
+<tr>
+<td style="text-align:left"><img src="https://wiki.pentaho.com/download/attachments/7700806/14.png?version=1&amp;modificationDate=1210852063000&amp;api=v2" alt="img"></td>
+<td style="text-align:left">重播特定日期和时间的转换处理。这将导致某些步骤（文本文件输入和Excel输入）仅处理在特定日期和时间运行期间无法正确解释的行。</td>
+</tr>
+<tr>
+<td style="text-align:left"><img src="https://wiki.pentaho.com/download/attachments/7700806/15.png?version=1&amp;modificationDate=1210852071000&amp;api=v2" alt="img"></td>
+<td style="text-align:left">验证转换：Spoon为每个步骤运行一系列检查，以查看是否所有内容都将按预期运行。</td>
+</tr>
+<tr>
+<td style="text-align:left"><img src="https://wiki.pentaho.com/download/attachments/7700806/16.png?version=1&amp;modificationDate=1210852076000&amp;api=v2" alt="img"></td>
+<td style="text-align:left">运行影响分析：转换对使用的数据库有何影响。</td>
+</tr>
+<tr>
+<td style="text-align:left"><img src="https://wiki.pentaho.com/download/attachments/7700806/17.png?version=1&amp;modificationDate=1210852082000&amp;api=v2" alt="img"></td>
+<td style="text-align:left">生成运行加载的转换所需的SQL。</td>
+</tr>
+<tr>
+<td style="text-align:left"><img src="https://wiki.pentaho.com/download/attachments/7700806/18.png?version=1&amp;modificationDate=1210852087000&amp;api=v2" alt="img"></td>
+<td style="text-align:left">启动数据库资源管理器，允许您预览数据，运行SQL查询，生成DDL等。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="Spoon选项"><a href="#Spoon选项" class="headerlink" title="Spoon选项"></a>Spoon选项</h2><p>Kettle选项允许您自定义与图形用户界面的行为和外观相关的属性。示例包括启动选项，例如是否显示提示和Kettle欢迎页面，以及用户界面选项（如字体和颜色）。要访问选项对话框，请从菜单栏中选择“ <strong>编辑”</strong>，然后<strong>选择“选项…</strong> ”。</p>
+<h3 id="常规选项卡"><a href="#常规选项卡" class="headerlink" title="常规选项卡"></a>常规选项卡</h3><table>
+<thead>
+<tr>
+<th style="text-align:left">特征</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">最大撤消级别</td>
+<td style="text-align:left">设置Spoon可以撤消（或重做）的最大步数</td>
+</tr>
+<tr>
+<td style="text-align:left">预览对话框中的默认行数</td>
+<td style="text-align:left">允许您更改转换预览期间从步骤请求的默认行数</td>
+</tr>
+<tr>
+<td style="text-align:left">记录窗口中的最大行数nr</td>
+<td style="text-align:left">指定要在日志记录窗口中显示的行的最大限制</td>
+</tr>
+<tr>
+<td style="text-align:left">在启动时显示提示？</td>
+<td style="text-align:left">设置启动时的提示显示</td>
+</tr>
+<tr>
+<td style="text-align:left">在启动时显示欢迎页面？</td>
+<td style="text-align:left">控制启动Spoon时是否显示“欢迎”页面</td>
+</tr>
+<tr>
+<td style="text-align:left">使用数据库缓存？</td>
+<td style="text-align:left">Spoon缓存存储在源数据库和目标数据库中的信息。在某些情况下，当您进行数据库更改时，缓存会导致错误的结果。为了防止错误，您可以完全禁用缓存，而不是每次都清除缓存。</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>注意</strong>：当您向数据库连接启动DDL（数据定义语言）语句时，Spoon会自动清除数据库缓存; 但是，使用第三方工具时，可能需要手动清除数据库缓存。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">特征</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">启动时打开最后一个文件？</td>
+<td style="text-align:left">从XML或存储库自动加载您使用（打开或保存）的最后一个转换</td>
+</tr>
+<tr>
+<td style="text-align:left">自动保存更改的文件？</td>
+<td style="text-align:left">在运行之前自动保存已更改的转换</td>
+</tr>
+<tr>
+<td style="text-align:left">只显示主树中的活动文件？</td>
+<td style="text-align:left">通过仅显示当前活动的文件，减少左侧主树中的转换和作业项的数量</td>
+</tr>
+<tr>
+<td style="text-align:left">仅将已使用的连接保存到XML？</td>
+<td style="text-align:left">将转换的XML导出限制为该转换中使用的连接。这在交换样本转换时很有用，以避免包含所有已定义的连接。</td>
+</tr>
+<tr>
+<td style="text-align:left">询问在打开/导入时替换现有连接？</td>
+<td style="text-align:left">在导入期间替换现有数据库连接之前请求权限</td>
+</tr>
+<tr>
+<td style="text-align:left">在打开/导入时替换现有连接？</td>
+<td style="text-align:left">这是在没有显示对话框时采取的操作。<em>（见上一个选项）</em></td>
+</tr>
+<tr>
+<td style="text-align:left">显示“保存”对话框？</td>
+<td style="text-align:left">允许您关闭更改转换时收到的确认对话框</td>
+</tr>
+<tr>
+<td style="text-align:left">自动拆分跳？</td>
+<td style="text-align:left">关闭要分割跳跃时获得的确认对话框（另请参见7.4。拆分跳跃）</td>
+</tr>
+<tr>
+<td style="text-align:left">显示“复制或分发”对话框？</td>
+<td style="text-align:left">关闭将步骤链接到多个输出时出现的警告消息。此警告消息描述了处理多个输出的两个选项：<strong>分发行</strong> - 目标步骤轮流接收行（循环法）<strong>复制行</strong> - 所有行都发送到所有目标</td>
+</tr>
+<tr>
+<td style="text-align:left">启动时显示存储库对话框？</td>
+<td style="text-align:left">控制是否在启动时显示存储库对话框。</td>
+</tr>
+<tr>
+<td style="text-align:left">退出时询问用户？</td>
+<td style="text-align:left">控制在用户选择退出应用程序时是否显示确认对话框。</td>
+</tr>
+<tr>
+<td style="text-align:left">清除自定义参数（步骤/插件）</td>
+<td style="text-align:left">清除插件或步骤对话框中设置的所有参数和标志。</td>
+</tr>
+<tr>
+<td style="text-align:left">显示工具提示？</td>
+<td style="text-align:left">此选项控制是否显示主工具栏上按钮的工具提示。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="外观和感受选项卡"><a href="#外观和感受选项卡" class="headerlink" title="外观和感受选项卡"></a>外观和感受选项卡</h3><table>
+<thead>
+<tr>
+<th style="text-align:left">特征</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">固定宽度字体</td>
+<td style="text-align:left">对话框，树，输入字段等中使用的字体</td>
+</tr>
+<tr>
+<td style="text-align:left">工作区上的字体</td>
+<td style="text-align:left">图形视图上使用的字体</td>
+</tr>
+<tr>
+<td style="text-align:left">笔记字体</td>
+<td style="text-align:left">在图形视图中显示的注释中使用的字体</td>
+</tr>
+<tr>
+<td style="text-align:left">背景颜色</td>
+<td style="text-align:left">设置Spoon中的背景颜色。它也会影响所有对话框</td>
+</tr>
+<tr>
+<td style="text-align:left">工作区背景颜色</td>
+<td style="text-align:left">在Spoon的图形视图中设置背景颜色</td>
+</tr>
+<tr>
+<td style="text-align:left">标签颜色</td>
+<td style="text-align:left">用于指示活动/选定选项卡的颜色。</td>
+</tr>
+<tr>
+<td style="text-align:left">工作区中的图标大小</td>
+<td style="text-align:left">影响图形窗口中图标的大小。图标的原始大小为32x32像素。最好的结果（图形）可能是16,24,32,48,64和其他32的倍数。</td>
+</tr>
+<tr>
+<td style="text-align:left">工作区上的线宽</td>
+<td style="text-align:left">影响图形视图上的跃点的线宽和步骤周围的边框。</td>
+</tr>
+<tr>
+<td style="text-align:left">工作区上的阴影大小</td>
+<td style="text-align:left">如果此大小大于0，则在画布上绘制步骤，跃点和注释的阴影，使其看起来像转换浮动在画布上方。</td>
+</tr>
+<tr>
+<td style="text-align:left">对话中间百分比</td>
+<td style="text-align:left">默认情况下，参数以对话框宽度的35％绘制，从左侧开始计算。您可以使用此参数更改此设置。在使用异常大字体的情况下可能很有用。</td>
+</tr>
+<tr>
+<td style="text-align:left">画布抗锯齿？</td>
+<td style="text-align:left">Windows，OSX和Linux等平台通过GDI，Carbon或Cairo支持抗锯齿。选中此选项可在图表视图中启用更平滑的线条和图标。如果启用此选项并且之后环境不再起作用，请将文件$ HOME / .kettle / .spoonrc中的选项“EnableAntiAliasing”的值更改为“N”（C：\ Documents and Settings \ <user> \。 Windows上的水壶\ .spoonrc）</user></td>
+</tr>
+<tr>
+<td style="text-align:left">使用OS的外观？</td>
+<td style="text-align:left">在Windows上进行检查可以使用Spoon中字体和颜色的默认系统设置。在其他平台上，情况总是如此。</td>
+</tr>
+<tr>
+<td style="text-align:left">显示品牌图形</td>
+<td style="text-align:left">启用此选项将在画布上和左侧“展开栏”中绘制Pentaho Data Integration品牌图形。</td>
+</tr>
+<tr>
+<td style="text-align:left">首选语言</td>
+<td style="text-align:left">您可以在此处指定默认语言设置。如果某个文本尚未转换为此语言环境，则Kettle将回退到故障转移语言环境。</td>
+</tr>
+<tr>
+<td style="text-align:left">替代语言</td>
+<td style="text-align:left">由于编写Kettle的原始语言是英语，因此最好将此语言环境设置为英语。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="搜索元数据"><a href="#搜索元数据" class="headerlink" title="搜索元数据"></a>搜索元数据</h2><p>此选项将搜索所有已加载作业的任何可用字段，连接器或注释以及“过滤器”字段中指定的字符串的转换。元数据搜索返回详细的结果集，显示任何搜索命中的位置。通过从菜单栏中选择“编辑”|“搜索元数据”可访问此功能。</p>
+<h2 id="设置环境变量"><a href="#设置环境变量" class="headerlink" title="设置环境变量"></a>设置环境变量</h2><p>“设置环境变量”功能允许您显式创建和设置当前用户会话的环境变量。在设计用于测试通常由另一个作业或转换动态设置的变量替换的转换时，这是一个有用的功能。</p>
+<p>通过从菜单栏中选择“编辑”|“设置环境变量”，可以访问此功能。</p>
+<blockquote>
+<p><strong>注意</strong>：运行使用未定义变量的转换时，也会显示此页面。这允许您在执行时间之前定义它们。</p>
+</blockquote>
+<h4 id="显示环境变量"><a href="#显示环境变量" class="headerlink" title="显示环境变量"></a>显示环境变量</h4><p>此功能显示当前环境变量列表及其值。可以通过从菜单栏中选择“编辑”|“显示环境变量”选项来访问它。</p>
+<h2 id="执行日志历史记录"><a href="#执行日志历史记录" class="headerlink" title="执行日志历史记录"></a>执行日志历史记录</h2><p>如果已将作业或转换配置为在数据库表中存储日志信息，则可以通过右键单击主树中的作业或转换并选择“打开历史记录视图”来查看先前执行的日志信息。出现类似于下面的视图：</p>
+<p><img src="/2019/03/12/Spoon用户指南：01Spoon简介/23.png" alt=""></p>
+<blockquote>
+<p><strong>注意</strong>：todo：修复PDI-224时的屏幕截图</p>
+</blockquote>
+<blockquote>
+<p><strong>注意</strong>：下次执行文件时，默认情况下也会打开作业或转换的日志历史记录。</p>
+</blockquote>
+<h2 id="重新执行"><a href="#重新执行" class="headerlink" title="重新执行"></a>重新执行</h2><p>重新执行功能允许您重新运行失败的转换。为文本文件输入和Excel输入实现了重放功能。它允许您将有错误的文件发送回源并更正数据。如果存在.line文件，则仅在重放期间处理之前失败的行。重新执行功能使用.line文件的文件名中的日期来匹配输入的重播日期。</p>
+<h2 id="生成针对目标步骤的映射"><a href="#生成针对目标步骤的映射" class="headerlink" title="生成针对目标步骤的映射"></a>生成针对目标步骤的映射</h2><p>如果您有固定的目标表，请将流中的字段映射到目标输出表中的相应字段。在转换中使用“选择值”步骤。“生成目标映射”选项为您提供了一个易于使用的对话框，用于定义这些映射，自动创建生成的“选择值”步骤，该步骤可以在表输出步骤之前放入转换流中。</p>
+<p>要访问“针对目标生成映射”选项，请右键单击表输出步骤。</p>
+<p><img src="/2019/03/12/Spoon用户指南：01Spoon简介/25.png" alt=""></p>
+<p>定义映射后，选择“确定”，包含映射的“选择值”步骤将显示在工作区中。在表输出步骤之前将映射步骤附加到转换中。</p>
+<h3 id="生成映射示例"><a href="#生成映射示例" class="headerlink" title="生成映射示例"></a>生成映射示例</h3><p>下面是一个简单转换的示例，我们希望在其中生成到目标输出表的映射：</p>
+<ol>
+<li>首先右键单击Table输出步骤，然后选择“Generate mappings against target”。<br><img src="/2019/03/12/Spoon用户指南：01Spoon简介/26.png" alt=""></li>
+<li>使用上面显示的Generate Mapping对话框添加所有必需的映射，然后单击OK。您现在将看到一个表输出映射步骤已添加到画布中。<br><img src="/2019/03/12/Spoon用户指南：01Spoon简介/27.png" alt=""></li>
+<li>在表输出步骤之前将生成的表输出映射步骤拖到转换流中：<br><img src="/2019/03/12/Spoon用户指南：01Spoon简介/28.png" alt=""></li>
+</ol>
+<h2 id="安全模式"><a href="#安全模式" class="headerlink" title="安全模式"></a>安全模式</h2><p>在混合来自多个源的行时使用安全模式，以确保所有行在所有条件下都具有相同的布局。Spoon日志记录窗口或“执行转换/作业”窗口中提供了安全模式选项。在安全模式下运行时，转换会检查通过的每一行并确保所有布局都相同。如果行与第一行的布局不同，则会生成并报告错误。</p>
+<blockquote>
+<p><strong>注意</strong>：Pan中也提供此选项。</p>
+</blockquote>
+<h2 id="欢迎页面"><a href="#欢迎页面" class="headerlink" title="欢迎页面"></a>欢迎页面</h2><p>欢迎页面显示您第一次启动Spoon 3.0; 它为您提供有关Pentaho数据集成的其他信息的链接。您可以通过从<strong>编辑</strong>菜单中选择<strong>选项</strong>来禁用Spoon选项中的欢迎页面。</p>
+<p><img src="/2019/03/12/Spoon用户指南：01Spoon简介/29.png" alt="img"></p>
+<p><em>以上。</em></p>
+<p>——本文译自<em>Pentaho Data Integration (aka Kettle)</em>官网文档<a href="https://wiki.pentaho.com/display/EAI/.01+Introduction+to+Spoon" target="_blank" rel="noopener">.01 Introduction to Spoon</a></p>
+
+        
+            <!-- css -->
+            <style type="text/css">
+              .center {
+                text-align: center;
+              }
+              .hidden {
+                display: none;
+              }
+              .donate_bar a.btn_donate{
+                display: inline-block;
+                width: 150px;
+                height: 82px;
+                background: url("/img/donate.png") no-repeat;
+                _background: url("/img/donate.png") no-repeat;
+
+                -webkit-transition: background 0s;
+                -moz-transition: background 0s;
+                -o-transition: background 0s;
+                -ms-transition: background 0s;
+                transition: background 0s;
+              }
+
+              .donate_bar a.btn_donate:hover{ background-position: 0px -82px;}
+              .donate_bar .donate_txt {
+                display: block;
+                color: #9d9d9d;
+                font: 14px/2 "Microsoft Yahei";
+              }
+              .bold{ font-weight: bold; }
+            </style>
+
+            <!-- /css -->
+            <!-- Donate Module -->
+            <div id="donate_module">
+
+              <!-- btn_donate &amp; tips -->
+              <div id="donate_board" class="donate_bar center">
+                <a id="btn_donate" class="btn_donate" target="_self" href="javascript:;" title="Donate 打赏"></a>
+                <span class="donate_txt">
+                  Enjoy it ? Donate me !  欣赏此文？求鼓励，求支持！
+                </span>
+              </div>
+              <!-- /btn_donate &amp; tips -->
+
+              <!-- donate guide -->
+              <div id="donate_guide" class="donate_bar center hidden">
+
+                <a href="/img/wechat.jpg" title="用微信扫一扫哦~" class="fancybox" rel="article0">
+                  <img src="/img/wechat.jpg" title="微信打赏" height="190px" width="auto">
+                </a>
+
+
+
+                <a href="/img/ali.jpg" title="用支付宝扫一扫即可~" class="fancybox" rel="article0">
+                  <img src="/img/ali.jpg" title="支付宝打赏" height="190px" width="auto">
+                </a>
+
+                <span class="donate_txt">
+                  Enjoy it ? Donate me !  欣赏此文？求鼓励，求支持！
+                </span>
+
+              </div>
+              <!-- /donate guide -->
+
+              <!-- donate script -->
+              <script type="text/javascript">
+                document.getElementById('btn_donate').onclick = function() {
+                  $('#donate_board').addClass('hidden');
+                  $('#donate_guide').removeClass('hidden');
+                }
+
+                function donate_on_web(){
+                  $('#donate').submit();
+                }
+
+                var original_window_onload = window.onload;
+                window.onload = function () {
+                  if (original_window_onload) {
+                    original_window_onload();
+                  }
+                  document.getElementById('donate_board_wdg').className = 'hidden';
+                }
+              </script>
+              <!-- /donate script -->
+
+            </div>
+            <!-- /Donate Module -->
+            
+        
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用 Gitalk -->
+<div id="gitalk-comment">
+    <!-- Gitalk 评论框 -->
+<div id="gitalk-container"></div>
+
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<script>
+    var gitalk = new Gitalk({
+            clientID: 'f8ab144f443d6fd5d912',
+            clientSecret: 'a498368e62272153623854db3b6a7682136af937',
+            repo: 'ebichu3.github.io',
+            owner: 'ebichu3',
+            admin: ['ebichu3'],
+            // facebook-like distraction free mode
+            distractionFreeMode: false,
+            <!-- 解决issue的label过长导致Error: Validation Failed add by lyz 20190326 -->
+            id: 'Spoon用户指南：01Spoon简介'
+        })
+   gitalk.render('gitalk-container')
+</script>
+</div>
+<style>
+    #gitalk-comment {
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="/2019/07/20/WEEK一：数据的描述性统计/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2019/03/10/kettle基础教程（二）开始你的第一个kettle例子吧/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.png);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/touxiang.jpg" alt="ebichu's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        ebichu33333333@gmail.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="ebichu33333333@gmail.com" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                主页
+            </a>
+        </li>
+        
+    
+
+    <!-- Archives  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">inbox</i>
+                
+                    归档
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2019/07/">七月 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/03/">三月 2019<span class="sidebar_archives-count">3</span></a>
+            </li></ul>
+        </li>
+        
+    
+
+    <!-- Categories  -->
+    
+
+    <!-- Pages  -->
+    
+        <li>
+            <a href="/gallery" title="About">
+                
+                    <i class="material-icons sidebar-material-icons">person</i>
+                
+                About
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/tags" title="标签云">
+                
+                    <i class="material-icons sidebar-material-icons">cloud</i>
+                
+                标签云
+            </a>
+        </li>
+        
+    
+
+    <!-- Article Number  -->
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+
+<!-- Theme Material -->
+
+
+<!-- Help & Support -->
+<!--
+
+-->
+
+<!-- Feedback -->
+<!--
+
+-->
+
+<!-- About Theme -->
+<!--
+
+-->
+
+    </div>
+
+    <!-- Sidebar Image -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+        <a href="https://twitter.com/lyzz15" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-twitter">
+                <span class="visuallyhidden">Twitter</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Facebook -->
+    
+
+    <!-- Google + -->
+    
+
+    <!-- Weibo -->
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+        <a href="https://github.com/ebichu3" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-github">
+                <span class="visuallyhidden">Github</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+
+    <!-- Bilibili -->
+    
+
+    <!-- Telegram -->
+    
+
+    <!-- V2EX -->
+    
+
+    <!-- Segmentfault -->
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©&nbsp;<span year=""></span>&nbsp;ebichu's Blog
+            
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+                    <!-- Import JS File -->
+
+    <script>lsloader.load("lazyload_js","/js/lazyload.min.js?1BcfzuNXqV+ntF6gq+5X3Q==", true)</script>
+
+
+
+    <script>lsloader.load("js_js","/js/js.min.js?Bn9UzEm8RrBSxqyZB0zPjA==", true)</script>
+
+
+
+    <script>lsloader.load("np_js","/js/nprogress.js?pl3Qhb9lvqR1FlyLUna1Yw==", true)</script>
+
+
+<script type="text/ls-javascript" id="NProgress-script">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+
+
+
+
+    <!-- Busuanzi -->
+    <script src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+   <!-- GitTalk -->
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+
+
+
+
+
+<!-- UC Browser Compatible -->
+<script>
+	var agent = navigator.userAgent.toLowerCase();
+	if(agent.indexOf('ucbrowser')>0) {
+		document.write('<link rel="stylesheet" href="/css/uc.css">');
+	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+	}
+</script>
+
+<!-- Import prettify js  -->
+
+
+
+<!-- Window Load -->
+<!-- add class for prettify -->
+<script type="text/ls-javascript" id="window-load">
+    $(window).on('load', function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+
+    
+    
+</script>
+
+<!-- MathJax Load-->
+
+
+<!-- Bing Background -->
+
+
+<script type="text/ls-javascript" id="lazy-load">
+    // Offer LazyLoad
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    // Start Queue
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
+
+<!-- Custom Footer -->
+
+
+
+<script>
+    var copyrightNow = new Date().getFullYear();
+    var textContent = document.querySelector('span[year]')
+
+    copyrightSince = 0000;
+    if (copyrightSince === copyrightNow||copyrightSince === 0000) {
+        textContent.textContent = copyrightNow
+    } else {
+        textContent.textContent = copyrightSince + ' - ' + copyrightNow
+    }
+
+    (function(){
+        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
+
+        for (var i = 0; i < scriptList.length; ++i) {
+            var item = scriptList[i];
+            lsloader.runInlineScript(item.id,item.id);
+        }
+    })()
+console.log('\n %c © Material Theme | Version: 1.5.6 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
+</script>
+
+                </main>
+            </div>
+        </body>
+    
+</html>
