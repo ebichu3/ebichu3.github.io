@@ -63,13 +63,13 @@
   </entry>
   
   <entry>
-    <title>Spoon用户指南：02创建转化或作业</title>
-    <link href="https://ebichu3.github.io/2019/03/12/Spoon%E7%94%A8%E6%88%B7%E6%8C%87%E5%8D%97%EF%BC%9A02%E5%88%9B%E5%BB%BA%E8%BD%AC%E5%8C%96%E6%88%96%E4%BB%BB%E5%8A%A1/"/>
-    <id>https://ebichu3.github.io/2019/03/12/Spoon用户指南：02创建转化或任务/</id>
+    <title>Spoon用户指南：02创建转换或作业</title>
+    <link href="https://ebichu3.github.io/2019/03/12/Spoon%E7%94%A8%E6%88%B7%E6%8C%87%E5%8D%97%EF%BC%9A02%E5%88%9B%E5%BB%BA%E8%BD%AC%E6%8D%A2%E6%88%96%E4%BD%9C%E4%B8%9A/"/>
+    <id>https://ebichu3.github.io/2019/03/12/Spoon用户指南：02创建转换或作业/</id>
     <published>2019-03-12T13:17:00.000Z</published>
-    <updated>2019-07-30T06:09:21.708Z</updated>
+    <updated>2019-07-30T06:15:10.940Z</updated>
     
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="创建转换或作业"><a href="#创建转换或作业" class="headerlink" title="创建转换或作业"></a>创建转换或作业</h2><p>您可以通过以下三种方式之一创建新的转换：</p><ol><li>单击主工具栏上的“新建转换”按钮</li><li>单击<strong>New</strong>，然后单击<strong>Transformation</strong></li><li>使用<strong>CTRL-N</strong>热键</li></ol><p>这些操作中的任何一个都会打开一个新的“转换”选项卡，供您开始设计转换。</p><p>您可以通过以下三种方式之一创建新作业：</p><ol><li>单击主工具栏上的“新建作业”按钮</li><li>单击<strong>New</strong>，然后单击<strong>Job</strong></li><li>通过使用<strong>CTRL-ALT-N</strong>热键</li></ol><p>这些操作中的任何一个都会打开一个新的“作业”选项卡，供您开始设计作业。</p><p><img src="/2019/03/12/Spoon用户指南：02创建转化或任务/1.png" alt="img"></p><h2 id="添加注释"><a href="#添加注释" class="headerlink" title="添加注释"></a>添加注释</h2><p>Notes允许您将描述性文本注释添加到“作业”或“转换”画布：</p><ul><li>要在图形视图中添加注释，请右键单击画布并选择“ <strong>添加注释”</strong>。</li><li>要编辑注释，请双击注释并使用左键拖动它。</li><li>要删除注释，请右键单击注释，然后选择<strong>删除注释</strong>。</li></ul>]]></content>
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="创建转换或作业"><a href="#创建转换或作业" class="headerlink" title="创建转换或作业"></a>创建转换或作业</h2><p>您可以通过以下三种方式之一创建新的转换：</p><ol><li>单击主工具栏上的“新建转换”按钮</li><li>单击<strong>New</strong>，然后单击<strong>Transformation</strong></li><li>使用<strong>CTRL-N</strong>热键</li></ol><p>这些操作中的任何一个都会打开一个新的“转换”选项卡，供您开始设计转换。</p><p>您可以通过以下三种方式之一创建新作业：</p><ol><li>单击主工具栏上的“新建作业”按钮</li><li>单击<strong>New</strong>，然后单击<strong>Job</strong></li><li>通过使用<strong>CTRL-ALT-N</strong>热键</li></ol><p>这些操作中的任何一个都会打开一个新的“作业”选项卡，供您开始设计作业。</p><p><img src="/2019/03/12/Spoon用户指南：02创建转换或作业/1.png" alt="img"></p><h2 id="添加注释"><a href="#添加注释" class="headerlink" title="添加注释"></a>添加注释</h2><p>Notes允许您将描述性文本注释添加到“作业”或“转换”画布：</p><ul><li>要在图形视图中添加注释，请右键单击画布并选择“ <strong>添加注释”</strong>。</li><li>要编辑注释，请双击注释并使用左键拖动它。</li><li>要删除注释，请右键单击注释，然后选择<strong>删除注释</strong>。</li></ul>]]></content>
     
     <summary type="html">
     
