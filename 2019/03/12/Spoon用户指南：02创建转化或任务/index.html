@@ -48,7 +48,7 @@
     
     <title>
         
-            timeline | 
+            Spoon用户指南：02创建转化或作业 | 
         
         ebichu&#39;s Blog
     </title>
@@ -59,7 +59,7 @@
 
     <meta name="format-detection" content="telephone=no">
     <meta name="description" itemprop="description" content="ebichu&#39;s Blog">
-    <meta name="keywords" content="blog ETL bigdata">
+    <meta name="keywords" content="blog ETL bigdata,DOCUMENT,kettle">
     <meta name="theme-color" content="#0097A7">
 
     <!-- Disable Fucking Bloody Baidu Tranformation -->
@@ -215,7 +215,7 @@
     <!-- WebAPP Icons -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="ebichu&#39;s Blog">
-    <meta name="msapplication-starturl" content="https://ebichu3.github.io/timeline/">
+    <meta name="msapplication-starturl" content="https://ebichu3.github.io/2019/03/12/Spoon用户指南：02创建转化或任务/">
     <meta name="msapplication-navbutton-color" content="#0097A7">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="ebichu&#39;s Blog">
@@ -230,13 +230,16 @@
     
 
     <!-- The Open Graph protocol -->
-    <meta property="og:url" content="https://ebichu3.github.io/timeline/">
+    <meta property="og:url" content="https://ebichu3.github.io/2019/03/12/Spoon用户指南：02创建转化或任务/">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="timeline | ebichu&#39;s Blog">
+    <meta property="og:title" content="Spoon用户指南：02创建转化或作业 | ebichu&#39;s Blog">
     <meta property="og:image" content="/img/favicon.png">
     <meta property="og:description" content="ebichu&#39;s Blog">
-    
+    <meta property="og:article:tag" content="DOCUMENT"> <meta property="og:article:tag" content="kettle"> 
 
+    
+        <meta property="article:published_time" content="Tue Mar 12 2019 21:17:00 GMT+0800">
+        <meta property="article:modified_time" content="Tue Jul 30 2019 14:09:21 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -244,13 +247,43 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="https://ebichu3.github.io/timeline/index.html">
+        <link rel="canonical" href="https://ebichu3.github.io/2019/03/12/Spoon用户指南：02创建转化或任务/index.html">
     
 
     <!-- Structured-data for SEO -->
     
         
 
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "https://ebichu3.github.io/2019/03/12/Spoon用户指南：02创建转化或任务/index.html",
+    "headline": "Spoon用户指南：02创建转化或作业",
+    "datePublished": "Tue Mar 12 2019 21:17:00 GMT+0800",
+    "dateModified": "Tue Jul 30 2019 14:09:21 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "ebichu",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/touxiang.jpg"
+        },
+        "description": "Have a nice day : )"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "ebichu&#39;s Blog",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/favicon.png"
+        }
+    },
+    "keywords": ",DOCUMENT,kettleblog ETL bigdata",
+    "description": "ebichu&#39;s Blog",
+}
+</script>
 
 
     
@@ -286,588 +319,386 @@
 
                     <!-- Post TOC -->
 
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn" class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#创建转换或作业"><span class="post-toc-number">1.</span> <span class="post-toc-text">创建转换或作业</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#添加注释"><span class="post-toc-number">2.</span> <span class="post-toc-text">添加注释</span></a></li></ol>
+    </ul>
+    
+
+
+
 
 <!-- Layouts -->
 
-    <!-- Single Timeline Page -->
-    <style>
-	.md-container {
-		width: 90%;
-		max-width: 1170px;
-		margin: 0 auto;
-	}
-	.md-container::after {
-		content: '';
-		display: table;
-		clear: both;
-	}
-	#md-timeline {
-		position: relative;
-		padding: 2em 0;
-		margin-top: 2em;
-		margin-bottom: 2em;
-	}
-	@media screen and (max-device-width:480px){
-		#md-timeline {
-			margin-top: 6em;
-		}
-	}
-	#md-timeline::before {
-		content: '';
-		position: absolute;
-		top: 0;
-		left: 18px;
-		height: 100%;
-		width: 2px;
-		background: #d7e4ed;
-	}
-	.md-timeline-title {
-		font-size: 20px;
-		line-height: 24px;
-	}
-	.md-timeline-content a {
-		text-decoration: none;
-	}
-	.md-timeline-info {
-		height: 20px;
-		width: 100%;
-		margin: 10px 0px;
-	}
-	.md-timeline-info-span {
-		float: right;
-		margin-right: 10px;
-		text-align: right;
-	}
-	.md-timeline-excerpt {
-	    	clear: right; 
-	}
-	@media only screen and (min-width: 1170px) {
-		#md-timeline {
-			margin-top: 3em;
-			margin-bottom: 3em;
-		}
-		#md-timeline::before {
-			left: 50%;
-			margin-left: -2px;
-		}
-	}
-	.md-timeline-block {
-		position: relative;
-		margin: 2em 0;
-	}
-	.md-timeline-block:after {
-		content: "";
-		display: table;
-		clear: both;
-	}
-	.md-timeline-block:first-child {
-		margin-top: 0;
-	}
-	.md-timeline-block:last-child {
-		margin-bottom: 0;
-	}
-	@media only screen and (min-width: 1170px) {
-		.md-timeline-block {
-			margin: 4em 0;
-		}
-		.md-timeline-block:first-child {
-			margin-top: 0;
-		}
-		.md-timeline-block:last-child {
-			margin-bottom: 0;
-		}
-	}
-	.md-timeline-date {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 60px;
-		height: 40px;
-		border-radius: box-shadow: 0 0 0 4px white, inset 0 2px 0 rgba(0, 0, 0, 0.08), 0 3px 0 4px rgba(0, 0, 0, 0.05);
-	}
-	.md-timeline-date.blue {
-		background: #0D395F;
-		-webkit-box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.75);
-		-moz-box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.75);
-		box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.75);
-	}
-	@media only screen and (min-width: 1170px) {
-		.md-timeline-date {
-			width: 60px;
-			height: 60px;
-			left: 50%;
-			margin-left: -30px;
-			/* Force Hardware Acceleration in WebKit */
-			-webkit-transform: translateZ(0);
-			-webkit-backface-visibility: hidden;
-		}
-		.cssanimations .md-timeline-date.is-hidden {
-			visibility: hidden;
-		}
-		.cssanimations .md-timeline-date.bounce-in {
-			visibility: visible;
-			-webkit-animation: md-bounce-1 0.6s;
-			-moz-animation: md-bounce-1 0.6s;
-			animation: md-bounce-1 0.6s;
-		}
-	}
-	@-webkit-keyframes md-bounce-1 {
-		0% {
-			opacity: 0;
-			-webkit-transform: scale(0.5);
-		}
-		60% {
-			opacity: 1;
-			-webkit-transform: scale(1.2);
-		}
-		100% {
-			-webkit-transform: scale(1);
-		}
-	}
-	@-moz-keyframes md-bounce-1 {
-		0% {
-			opacity: 0;
-			-moz-transform: scale(0.5);
-		}
-		60% {
-			opacity: 1;
-			-moz-transform: scale(1.2);
-		}
-		100% {
-			-moz-transform: scale(1);
-		}
-	}
-	@keyframes md-bounce-1 {
-		0% {
-			opacity: 0;
-			-webkit-transform: scale(0.5);
-			-moz-transform: scale(0.5);
-			-ms-transform: scale(0.5);
-			-o-transform: scale(0.5);
-			transform: scale(0.5);
-		}
-		60% {
-			opacity: 1;
-			-webkit-transform: scale(1.2);
-			-moz-transform: scale(1.2);
-			-ms-transform: scale(1.2);
-			-o-transform: scale(1.2);
-			transform: scale(1.2);
-		}
-		100% {
-			-webkit-transform: scale(1);
-			-moz-transform: scale(1);
-			-ms-transform: scale(1);
-			-o-transform: scale(1);
-			transform: scale(1);
-		}
-	}
-	.md-timeline-content {
-		position: relative;
-		margin-left: 60px;
-		background: white;
-		padding: 1em;
-		-webkit-box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.75);
-		-moz-box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.75);
-		box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.75);
-	}
-	.md-timeline-content:after {
-		content: "";
-		display: table;
-		clear: both;
-	}
-	.md-timeline-content h2 {
-		color: #303e49;
-	}
-	.md-timeline-content p, .md-timeline-content .md-read-more, .md-timeline-content .md-date {
-		font-size: 13px;
-		font-size: 0.8125rem;
-	}
-	.md-timeline-content .md-read-more, .md-timeline-content .md-date {
-		display: inline-block;
-	}
-	.md-timeline-content p {
-		margin: 1em 0;
-		line-height: 1.6;
-	}
-	.md-timeline-content .md-read-more {
-		float: right;
-		padding: .8em 1em;
-		background: #acb7c0;
-		color: white;
-		border-radius: 0.25em;
-	}
-	.md-date {
-		color: white;
-		text-align: center;
-	}
-	.no-touch .md-timeline-content .md-read-more:hover {
-		background-color: #bac4cb;
-	}
-	.md-timeline-content::before {
-		content: '';
-		position: absolute;
-		top: 16px;
-		right: 100%;
-		height: 0;
-		width: 0;
-		border: 7px solid transparent;
-		border-right: 7px solid white;
-	}
-	@media only screen and (min-width: 768px) {
-		.md-timeline-content h2 {
-			font-size: 20px;
-			font-size: 1.25rem;
-		}
-		.md-timeline-content p {
-			font-size: 16px;
-			font-size: 1rem;
-		}
-		.md-timeline-content .md-read-more {
-			font-size: 14px;
-			font-size: 0.875rem;
-		}
-	}
-	@media only screen and (min-width: 1170px) {
-		.md-date {
-			text-align: center;
-			margin-top: 10px;
-			line-height: 20px;
-		}
-		.md-timeline-content {
-			margin-left: 0;
-			padding: 1.6em;
-			width: 45%;
-		}
-		.md-timeline-content::before {
-			top: 24px;
-			left: 100%;
-			border-color: transparent;
-			border-left-color: white;
-		}
-		.md-timeline-content .md-read-more {
-			float: left;
-		}
-		.md-timeline-block:nth-child(even) .md-timeline-content {
-			float: right;
-		}
-		.md-timeline-block:nth-child(even) .md-timeline-content::before {
-			top: 24px;
-			left: auto;
-			right: 100%;
-			border-color: transparent;
-			border-right-color: white;
-		}
-		.md-timeline-block:nth-child(even) .md-timeline-content .md-read-more {
-			float: right;
-		}
-		.cssanimations .md-timeline-content.is-hidden {
-			visibility: hidden;
-		}
-		.cssanimations .md-timeline-content.bounce-in {
-			visibility: visible;
-			-webkit-animation: md-bounce-2 0.6s;
-			-moz-animation: md-bounce-2 0.6s;
-			animation: md-bounce-2 0.6s;
-		}
-	}
-	@media only screen and (min-width: 1170px) {
-		/* inverse bounce effect on even content blocks */
-		.cssanimations .md-timeline-block:nth-child(even) .md-timeline-content.bounce-in {
-			-webkit-animation: md-bounce-2-inverse 0.6s;
-			-moz-animation: md-bounce-2-inverse 0.6s;
-			animation: md-bounce-2-inverse 0.6s;
-		}
-	}
-	@-webkit-keyframes md-bounce-2 {
-		0% {
-			opacity: 0;
-			-webkit-transform: translateX(-100px);
-		}
-		60% {
-			opacity: 1;
-			-webkit-transform: translateX(20px);
-		}
-		100% {
-			-webkit-transform: translateX(0);
-		}
-	}
-	@-moz-keyframes md-bounce-2 {
-		0% {
-			opacity: 0;
-			-moz-transform: translateX(-100px);
-		}
-		60% {
-			opacity: 1;
-			-moz-transform: translateX(20px);
-		}
-		100% {
-			-moz-transform: translateX(0);
-		}
-	}
-	@keyframes md-bounce-2 {
-		0% {
-			opacity: 0;
-			-webkit-transform: translateX(-100px);
-			-moz-transform: translateX(-100px);
-			-ms-transform: translateX(-100px);
-			-o-transform: translateX(-100px);
-			transform: translateX(-100px);
-		}
-		60% {
-			opacity: 1;
-			-webkit-transform: translateX(20px);
-			-moz-transform: translateX(20px);
-			-ms-transform: translateX(20px);
-			-o-transform: translateX(20px);
-			transform: translateX(20px);
-		}
-		100% {
-			-webkit-transform: translateX(0);
-			-moz-transform: translateX(0);
-			-ms-transform: translateX(0);
-			-o-transform: translateX(0);
-			transform: translateX(0);
-		}
-	}
-	@-webkit-keyframes md-bounce-2-inverse {
-		0% {
-			opacity: 0;
-			-webkit-transform: translateX(100px);
-		}
-		60% {
-			opacity: 1;
-			-webkit-transform: translateX(-20px);
-		}
-		100% {
-			-webkit-transform: translateX(0);
-		}
-	}
-	@-moz-keyframes md-bounce-2-inverse {
-		0% {
-			opacity: 0;
-			-moz-transform: translateX(100px);
-		}
-		60% {
-			opacity: 1;
-			-moz-transform: translateX(-20px);
-		}
-		100% {
-			-moz-transform: translateX(0);
-		}
-	}
-	@keyframes md-bounce-2-inverse {
-		0% {
-			opacity: 0;
-			-webkit-transform: translateX(100px);
-			-moz-transform: translateX(100px);
-			-ms-transform: translateX(100px);
-			-o-transform: translateX(100px);
-			transform: translateX(100px);
-		}
-		60% {
-			opacity: 1;
-			-webkit-transform: translateX(-20px);
-			-moz-transform: translateX(-20px);
-			-ms-transform: translateX(-20px);
-			-o-transform: translateX(-20px);
-			transform: translateX(-20px);
-		}
-		100% {
-			-webkit-transform: translateX(0);
-			-moz-transform: translateX(0);
-			-ms-transform: translateX(0);
-			-o-transform: translateX(0);
-			transform: translateX(0);
-		}
-	}
-</style>
+    <!-- Post Module -->
+    <div class="material-post_container">
 
-<section id="md-timeline" class="md-container">
-   	   		
-			<div class="md-timeline-block">
-                		<div class="md-timeline-date blue">
-                   			<div class="md-date">7月 23 2019</div>
-                		</div>
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
 
-                		<div class="md-timeline-content">
-                    			<div class="md-timeline-title"><a href="/2019/07/23/一个SQL问题引发的思考：WM_CONCAT、LISTAGGRANK、DENSE_RANK的用法/">由一个SQL问题引发的：WM_CONCAT、LISTAGG的用法</a></div>
-					<div class="md-timeline-info">
-						<span class="md-timeline-info-span">Categories:
-							
-						</span>
-						<span class="md-timeline-info-span">Tags:
-							<a class="tag-link" href="/tags/SQL/">SQL</a>
-						</span>
-						
-					</div>
-					<p class="md-timeline-excerpt">
-						
-							
-						...
-					</p>
-                    		</div>
-			</div>	
-   		
-			<div class="md-timeline-block">
-                		<div class="md-timeline-date blue">
-                   			<div class="md-date">7月 20 2019</div>
-                		</div>
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
 
-                		<div class="md-timeline-content">
-                    			<div class="md-timeline-title"><a href="/2019/07/20/WEEK一：数据的描述性统计/">WEEK一：数据的描述性统计</a></div>
-					<div class="md-timeline-info">
-						<span class="md-timeline-info-span">Categories:
-							
-						</span>
-						<span class="md-timeline-info-span">Tags:
-							<a class="tag-link" href="/tags/DATA-SCIENCE/">DATA SCIENCE</a>
-						</span>
-						
-					</div>
-					<p class="md-timeline-excerpt">
-						
-							
-						...
-					</p>
-                    		</div>
-			</div>	
-   		
-			<div class="md-timeline-block">
-                		<div class="md-timeline-date blue">
-                   			<div class="md-date">3月 12 2019</div>
-                		</div>
-
-                		<div class="md-timeline-content">
-                    			<div class="md-timeline-title"><a href="/2019/03/12/Spoon用户指南：02创建转化或任务/">Spoon用户指南：02创建转化或作业</a></div>
-					<div class="md-timeline-info">
-						<span class="md-timeline-info-span">Categories:
-							
-						</span>
-						<span class="md-timeline-info-span">Tags:
-							<a class="tag-link" href="/tags/DOCUMENT/">DOCUMENT</a>, <a class="tag-link" href="/tags/kettle/">kettle</a>
-						</span>
-						
-					</div>
-					<p class="md-timeline-excerpt">
-						
-							
-						...
-					</p>
-                    		</div>
-			</div>	
-   		
-			<div class="md-timeline-block">
-                		<div class="md-timeline-date blue">
-                   			<div class="md-date">3月 12 2019</div>
-                		</div>
-
-                		<div class="md-timeline-content">
-                    			<div class="md-timeline-title"><a href="/2019/03/12/Spoon用户指南：01Spoon简介/">Spoon用户指南：01Spoon简介</a></div>
-					<div class="md-timeline-info">
-						<span class="md-timeline-info-span">Categories:
-							
-						</span>
-						<span class="md-timeline-info-span">Tags:
-							<a class="tag-link" href="/tags/DOCUMENT/">DOCUMENT</a>, <a class="tag-link" href="/tags/kettle/">kettle</a>
-						</span>
-						
-					</div>
-					<p class="md-timeline-excerpt">
-						
-							
-						...
-					</p>
-                    		</div>
-			</div>	
-   		
-			<div class="md-timeline-block">
-                		<div class="md-timeline-date blue">
-                   			<div class="md-date">3月 12 2019</div>
-                		</div>
-
-                		<div class="md-timeline-content">
-                    			<div class="md-timeline-title"><a href="/2019/03/12/Spoon用户指南/">Spoon用户指南：00概述</a></div>
-					<div class="md-timeline-info">
-						<span class="md-timeline-info-span">Categories:
-							
-						</span>
-						<span class="md-timeline-info-span">Tags:
-							<a class="tag-link" href="/tags/DOCUMENT/">DOCUMENT</a>, <a class="tag-link" href="/tags/kettle/">kettle</a>
-						</span>
-						
-					</div>
-					<p class="md-timeline-excerpt">
-						
-							
-						...
-					</p>
-                    		</div>
-			</div>	
-   		
-			<div class="md-timeline-block">
-                		<div class="md-timeline-date blue">
-                   			<div class="md-date">3月 10 2019</div>
-                		</div>
-
-                		<div class="md-timeline-content">
-                    			<div class="md-timeline-title"><a href="/2019/03/10/kettle基础教程（二）开始你的第一个kettle例子吧/">kettle基础教程（二）开始你的第一个kettle例子吧</a></div>
-					<div class="md-timeline-info">
-						<span class="md-timeline-info-span">Categories:
-							
-						</span>
-						<span class="md-timeline-info-span">Tags:
-							<a class="tag-link" href="/tags/ETL/">ETL</a>, <a class="tag-link" href="/tags/kettle/">kettle</a>
-						</span>
-						
-					</div>
-					<p class="md-timeline-excerpt">
-						
-							
-						...
-					</p>
-                    		</div>
-			</div>	
-   		
-			<div class="md-timeline-block">
-                		<div class="md-timeline-date blue">
-                   			<div class="md-date">3月 08 2019</div>
-                		</div>
-
-                		<div class="md-timeline-content">
-                    			<div class="md-timeline-title"><a href="/2019/03/08/kettle基础教程（一）简要介绍与安装部署/">kettle基础教程（一）简要介绍与安装部署</a></div>
-					<div class="md-timeline-info">
-						<span class="md-timeline-info-span">Categories:
-							
-						</span>
-						<span class="md-timeline-info-span">Tags:
-							<a class="tag-link" href="/tags/ETL/">ETL</a>, <a class="tag-link" href="/tags/kettle/">kettle</a>
-						</span>
-						
-					</div>
-					<p class="md-timeline-excerpt">
-						
-							
-						...
-					</p>
-                    		</div>
-			</div>	
-   			   	  		
-   	</section>
-
-<script type="text/ls-javascript" id="page-timeline-script">
-    var adjustFooter = function() {
-        if( ($('#bottom').offset().top + $('#bottom').outerHeight() )<$(window).height() ) {
-            var footerBottom = $(window).height() - $('#bottom').outerHeight() - $('#bottom').offset().top;
-            $('#bottom').css('bottom', '-' + footerBottom + 'px');
-        }
-    };
-    $(document).ready(function() {
-        adjustFooter();
-    });
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').addClass('lazy');
 </script>
 
+        
+    
+            <p class="article-headline-p">
+                Spoon用户指南：02创建转化或作业
+            </p>
+        </div>
 
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/touxiang.jpg" width="44px" height="44px" alt="Author Avatar">
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>ebichu</strong>
+        <span>3月 12, 2019</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">devices other</i>
+    <span class="visuallyhidden">devices other</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
+    <li class="mdl-menu__item">在其它设备中阅读本文章</li>
+    
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQ4AAAEOCAAAAABd2qZ5AAADhUlEQVR42u3ay4rjMBAF0Pz/T/dsG4Yk91ZJITRHq2AcWzpeFPV4/Fi/1gMBDhw4cODAgQMHDhxfzPGI19PHvbynfXL7xt93zs6CAwcOHDhucLwJRU82PdtEe5jXe3h9T3QWHDhw4MBxjSPZShJWN6ExeePrIJ0/GQcOHDhwfA9HHm5fkyVHSnaLAwcOHDj+Bscs0CYBOEH8ukCLAwcOHDhGBbW8XdReyRO8PDBfr5XiwIEDB471QMP3//7ofAcOHDhw4PiPo12P0WqTulkQHZ4IBw4cOHAc5cgDVZEUXRh6y3dS7x8HDhw4cBzlmJUF21G5lmk/rJDvHAcOHDhwnOV4c2vQOtonYPmgQxKS25QPBw4cOHDc4MjLdvsDt6CzAbuk+IgDBw4cOG5w5OlTnp7NEqp2bC5vXL0pO+LAgQMHjqMcm2DZpkxFWhW3oPLAXxQHceDAgQPHgqMtBc5C3al3zfjqFA4HDhw4cBzi2Bxms8W8ZdWmkThw4MCB4/McUWOmHJLelO02q21x4cCBAweO2xz5kfLrp/7bBtoECwcOHDhw3OZIrsxCXdIuylFmramn6SgOHDhw4LjM0Q4E7Bs/szduPiEOHDhw4Pg8x2yj+SB1XnacHbK4BwcOHDhwXOaYtXPyhlNeOmybSbMUEQcOHDhw3OBIUqAcZfN78xmG6R8OHDhw4LjMkSdULWvbZGoTxXZcDwcOHDhw3OMYjgLEIbN9ThukZ6kdDhw4cOC4wVH8bRTY2u3OPtLsCg4cOHDguMfxGK18AKK9s03JNrvCgQMHDhxnOWZhchb2EoLZAETyzLrthAMHDhw4FhzteEESIE81sTZ80XNw4MCBA8c1jrxEuE/8ksG4/MMkz6kDLQ4cOHDgWHO0baFNgyovEc5GFoZtJxw4cODAcYHjp1yz5lCbdLWBttg/Dhw4cOC4xrEZcZj9d1803L8LBw4cOHCc5ZiF1Txx2pQC8+ttwMaBAwcOHPc4ZqF01hZqRyiSAJwPTxQDDThw4MCBY82xCa6z+2eNqLygWTDhwIEDB45rHHlozDlmYXIWkmfDEzhw4MCB4xs42lGGvJg4G4lIdjic78CBAwcOHB/hyIt3bSEyP3x7Pw4cOHDg+DxHkmi14TYPmS1uOwBxpe2EAwcOHDjWAw03wvCxkHkq0OLAgQMHjgWHhQMHDhw4cODAgQMHji9b/wDQidfxt3FkQAAAAABJRU5ErkJggg==">
+    
+</ul>
+
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/DOCUMENT/">DOCUMENT</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/kettle/">kettle</a>
+    </li></ul>
+    
+
+    <!-- Share -->
+    
+        <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+        
+            <!-- Busuanzi Views -->
+            <a class="post_share-link" href="#">
+                <li class="mdl-menu__item">
+                    <span id="busuanzi_container_page_pv">
+                        <span id="busuanzi_value_page_pv"></span>&nbsp;浏览量
+                    </span>
+                </li>
+            </a>
+        
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Spoon用户指南：02创建转化或作业&url=https://ebichu3.github.io/2019/03/12/Spoon用户指南：02创建转化或任务/index.html&pic=https://ebichu3.github.io/img/favicon.png&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Spoon用户指南：02创建转化或作业&url=https://ebichu3.github.io/2019/03/12/Spoon用户指南：02创建转化或任务/index.html&via=ebichu" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=https://ebichu3.github.io/2019/03/12/Spoon用户指南：02创建转化或任务/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=ebichu&#39;s Blog&title=Spoon用户指南：02创建转化或作业&summary=ebichu&#39;s Blog&pics=https://ebichu3.github.io/img/favicon.png&url=https://ebichu3.github.io/2019/03/12/Spoon用户指南：02创建转化或任务/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+    
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <h2 id="创建转换或作业"><a href="#创建转换或作业" class="headerlink" title="创建转换或作业"></a>创建转换或作业</h2><p>您可以通过以下三种方式之一创建新的转换：</p>
+<ol>
+<li>单击主工具栏上的“新建转换”按钮</li>
+<li>单击<strong>New</strong>，然后单击<strong>Transformation</strong></li>
+<li>使用<strong>CTRL-N</strong>热键</li>
+</ol>
+<p>这些操作中的任何一个都会打开一个新的“转换”选项卡，供您开始设计转换。</p>
+<p>您可以通过以下三种方式之一创建新作业：</p>
+<ol>
+<li>单击主工具栏上的“新建作业”按钮</li>
+<li>单击<strong>New</strong>，然后单击<strong>Job</strong></li>
+<li>通过使用<strong>CTRL-ALT-N</strong>热键</li>
+</ol>
+<p>这些操作中的任何一个都会打开一个新的“作业”选项卡，供您开始设计作业。</p>
+<p><img src="/2019/03/12/Spoon用户指南：02创建转化或任务/1.png" alt="img"></p>
+<h2 id="添加注释"><a href="#添加注释" class="headerlink" title="添加注释"></a>添加注释</h2><p>Notes允许您将描述性文本注释添加到“作业”或“转换”画布：</p>
+<ul>
+<li>要在图形视图中添加注释，请右键单击画布并选择“ <strong>添加注释”</strong>。</li>
+<li>要编辑注释，请双击注释并使用左键拖动它。</li>
+<li>要删除注释，请右键单击注释，然后选择<strong>删除注释</strong>。</li>
+</ul>
+
+        
+            <!-- css -->
+            <style type="text/css">
+              .center {
+                text-align: center;
+              }
+              .hidden {
+                display: none;
+              }
+              .donate_bar a.btn_donate{
+                display: inline-block;
+                width: 150px;
+                height: 82px;
+                background: url("/img/donate.png") no-repeat;
+                _background: url("/img/donate.png") no-repeat;
+
+                -webkit-transition: background 0s;
+                -moz-transition: background 0s;
+                -o-transition: background 0s;
+                -ms-transition: background 0s;
+                transition: background 0s;
+              }
+
+              .donate_bar a.btn_donate:hover{ background-position: 0px -82px;}
+              .donate_bar .donate_txt {
+                display: block;
+                color: #9d9d9d;
+                font: 14px/2 "Microsoft Yahei";
+              }
+              .bold{ font-weight: bold; }
+            </style>
+
+            <!-- /css -->
+            <!-- Donate Module -->
+            <div id="donate_module">
+
+              <!-- btn_donate &amp; tips -->
+              <div id="donate_board" class="donate_bar center">
+                <a id="btn_donate" class="btn_donate" target="_self" href="javascript:;" title="Donate 打赏"></a>
+                <span class="donate_txt">
+                  Enjoy it ? Donate me !  欣赏此文？求鼓励，求支持！
+                </span>
+              </div>
+              <!-- /btn_donate &amp; tips -->
+
+              <!-- donate guide -->
+              <div id="donate_guide" class="donate_bar center hidden">
+
+                <a href="/img/wechat.jpg" title="用微信扫一扫哦~" class="fancybox" rel="article0">
+                  <img src="/img/wechat.jpg" title="微信打赏" height="190px" width="auto">
+                </a>
+
+
+
+                <a href="/img/ali.jpg" title="用支付宝扫一扫即可~" class="fancybox" rel="article0">
+                  <img src="/img/ali.jpg" title="支付宝打赏" height="190px" width="auto">
+                </a>
+
+                <span class="donate_txt">
+                  Enjoy it ? Donate me !  欣赏此文？求鼓励，求支持！
+                </span>
+
+              </div>
+              <!-- /donate guide -->
+
+              <!-- donate script -->
+              <script type="text/javascript">
+                document.getElementById('btn_donate').onclick = function() {
+                  $('#donate_board').addClass('hidden');
+                  $('#donate_guide').removeClass('hidden');
+                }
+
+                function donate_on_web(){
+                  $('#donate').submit();
+                }
+
+                var original_window_onload = window.onload;
+                window.onload = function () {
+                  if (original_window_onload) {
+                    original_window_onload();
+                  }
+                  document.getElementById('donate_board_wdg').className = 'hidden';
+                }
+              </script>
+              <!-- /donate script -->
+
+            </div>
+            <!-- /Donate Module -->
+            
+        
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用 Gitalk -->
+<div id="gitalk-comment">
+    <!-- Gitalk 评论框 -->
+<div id="gitalk-container"></div>
+
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<script>
+    var gitalk = new Gitalk({
+            clientID: 'f8ab144f443d6fd5d912',
+            clientSecret: 'a498368e62272153623854db3b6a7682136af937',
+            repo: 'ebichu3.github.io',
+            owner: 'ebichu3',
+            admin: ['ebichu3'],
+            // facebook-like distraction free mode
+            distractionFreeMode: false,
+            <!-- 解决issue的label过长导致Error: Validation Failed add by lyz 20190326 -->
+            id: 'Spoon用户指南：02创建转化或作业'
+        })
+   gitalk.render('gitalk-container')
+</script>
+</div>
+<style>
+    #gitalk-comment {
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="/2019/07/20/WEEK一：数据的描述性统计/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2019/03/12/Spoon用户指南：01Spoon简介/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
 
 
 
@@ -1025,6 +856,14 @@ It will not impact the appearance and can give developers a lot of support :)
 </aside>
 
                     
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
 
                     
 
